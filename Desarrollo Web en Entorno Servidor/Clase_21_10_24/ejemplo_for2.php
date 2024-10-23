@@ -11,7 +11,7 @@
 
 print "<p>empezamos</p>\n";
 
-for ($i=2; $i < 100; $i = $i + 3 ) { 
+for ($i=2; $i < 100; $i = $i + 4 ) { 
     
     print "<p>$i</p>\n";
 }
