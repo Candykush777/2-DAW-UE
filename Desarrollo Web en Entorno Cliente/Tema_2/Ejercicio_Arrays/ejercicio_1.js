@@ -64,7 +64,7 @@ array.forEach((element,i) => {
 
 console.log("--------------------------");
 
-//sumarle 1 a todos lso elementos 
+//sumarle 1 a todos los elementos 
 
 const resultado =[];
 for (let i = 0; i < array.length ; i++) {
@@ -82,7 +82,7 @@ console.log("--------------------");
 
 //calcular la media de todos los elementos del array 
 
-let suma=0; // me estaba dando NaN por noigualar a 0, xq toma valor como undefined
+let suma=0; // me estaba dando NaN por no igualar a 0, xq toma valor como undefined
 let media;
 
 
