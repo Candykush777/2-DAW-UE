@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <p style="margin-right: 10px"><b>Un típico y complejo formulario</b></p>
+
+    <table border="1" align="center">
+      <tr align="left">
+        <td>Nombre:</td>
+        <td>
+          <input
+            type="text"
+            placeholder="Escribe aqui"
+            style="width: 200px; border: 1px solid grey"
+          />F.Nac.:
+          <input
+            type="date"
+            placeholder="Escribe aqui"
+            style="width: 182px"
+          />DNI:
+          <input type="text" placeholder="Escribe aqui" style="width: 182px" />
+        </td>
+      </tr>
+
+      <tr align="left">
+        <td>Apellidos:</td>
+        <td>
+          <input type="text" placeholder="Escribe aqui" style="width: 450px" />
+        </td>
+      </tr>
+
+      <tr align="left">
+        <td>Calle y número:</td>
+        <td>
+          <input type="text" placeholder="Escribe aqui" style="width: 450px" />
+        </td>
+      </tr>
+
+      <tr align="left">
+        <td>Código Postal:</td>
+        <td>
+          <input
+            type="text"
+            placeholder="Escribe aqui"
+            style="width: 100px"
+          />Ciudad:<input
+            type="text"
+            placeholder="Escribe aqui"
+            style="width: 400px"
+          />
+        </td>
+      </tr>
+      <tr align="left">
+        <td>Provincia:</td>
+        <td>
+          <input
+            type="text"
+            placeholder="Escribe aqui"
+            style="width: 300px"
+          />Teléfono:<input
+            type="text"
+            placeholder="Escribe aqui"
+            style="width: 300px"
+          />
+        </td>
+      </tr>
+      <tr align="left">
+        <td><label>Opción:</label></td>
+        <td>
+          <select style="border: 1px solid gainsboro; width: 100px">
+            <option value="opcion1">OPCIÓN 1</option>
+            <option value="opcion2">OPCIÓN 2</option>
+            <option value="opcion3">OPCIÓN 3</option>
+          </select>
+          <label>Escoja una opcion</label>
+        </td>
+      </tr>
+      <tr align="left">
+        <td>
+          Comentarios<br />
+          personales:
+        </td>
+        <td>
+          <textarea
+            rows="2"
+            cols="88"
+            style="border: 1px solid grey"
+          ></textarea>
+        </td>
+      </tr>
+      <tr align="left">
+        <td><b>Pulse aquí</b>:</td>
+        <td style="text-align: center;">
+          <button
+            type="submit"
+            style="
+              background-color: lightgray;
+              border: 1px solid #ccc;
+              padding: 3px 10px;
+              cursor: pointer;
+            "
+          >
+            Enviar datos
+          </button>
+          <button
+            type="reset"
+            style="
+              background-color: lightgray;
+              border: 1px solid #ccc;
+              padding: 3px 10px;
+              cursor: pointer;
+              align-items: center;
+            "
+          >
+            Borrar datos
+          </button>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
