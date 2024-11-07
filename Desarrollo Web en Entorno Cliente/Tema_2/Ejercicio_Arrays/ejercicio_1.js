@@ -29,6 +29,7 @@ while(indice<array.length){
     indice++;
     
 }
+console.log("-------------------------");
 
 
 // con for
