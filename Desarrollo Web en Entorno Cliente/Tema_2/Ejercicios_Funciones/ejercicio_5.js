@@ -64,12 +64,12 @@ while (true) {
 
 // Función para calcular el pago mensual
 function calcularPagoMensual() {
-  const tasaInteresMensual = interes / (100 / 12);  // Tasa de interés mensual
+  const tasaInteresMensual = interes / 12  // Tasa de interés mensual
   const totalMeses = nAnios * 12;  // Número total de meses
 
   // Fórmula de pago mensual
-  const pagoMensual = (prestamo * tasaInteresMensual) / (1 - Math.pow(1 + tasaInteresMensual, -totalMeses));
-
+  const pagoMensual = (prestamo * (tasaInteresMensual / 100)) / 
+  (1 - Math.pow(1 + (tasaInteresMensual / 100), -totalMeses));
   return pagoMensual;
 }
 const cuotaMensual = calcularPagoMensual();
@@ -78,16 +78,16 @@ const aportacion=precio-prestamo;
 let totalReal=totalConIntereses+aportacion;
 
 console.log(
-    `Vas a pagar una cantidad de ${totalReal.toFixed(0)} ya con intereses en ${nAnios * 12} mensualidades con un importe mensual de ${cuotaMensual.toFixed(0)}`
+    `Vas a pagar una cantidad de ${totalReal.toFixed(2)} ya con intereses en ${nAnios * 12} mensualidades con un importe mensual de ${cuotaMensual.toFixed(2)}`
   );
   
   // Tabla de amortización
   let saldoRestante = totalConIntereses ;
   
   for (let mes = 1; mes <= nAnios * 12; mes++) {
-    saldoRestante -= pagoMensual;
+    saldoRestante -= cuotaMensual;
     console.log(
-      `Pago correspondiente al mes ${mes} con una cantidad de ${saldoRestante.toFixed(0)}`
+      `Pago correspondiente al mes ${mes} con una cantidad de ${saldoRestante.toFixed(2)}`
     );
   }
 
