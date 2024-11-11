@@ -1,0 +1,124 @@
+ header {
+
+     text-align: center;
+
+     padding: 20px;
+
+
+ }
+
+ header h1 {
+     font-size: 2.5em;
+     font-weight: bold;
+     color: maroon;
+     margin: 0;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+ }
+
+ /*  header h1::after {
+    content: "";
+    display: block;
+    width: 80px; 
+    height: 4px; 
+    background-color: #f1c40f; 
+    margin: 10px auto 0; 
+} */
+
+ header nav {
+
+     background-color: rgb(152, 160, 116);
+     height: 50px;
+     display: flex;
+     justify-content: center;
+     margin-top: 20px;
+
+
+ }
+
+ header nav a {
+
+     color: black;
+
+     margin: auto;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+ }
+
+ header nav a:hover {
+     background-color: #59a9c9;
+     /* Cambia el color de fondo al pasar el ratón */
+     padding: 10px;
+     /* Agrega  relleno al pasar el ratón */
+     border-radius: 5px;
+     /
+ }
+
+ html,body {
+    height: 100%;
+    
+  margin: 0;
+  
+
+     position: relative;
+ }
+
+ body::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+
+     background-image: url('./bonit_vino.png');
+     background-size: cover;
+     /* Hace que la imagen cubra toda la página */
+     background-repeat: no-repeat;
+     background-position: center;
+     
+     opacity: 0.2;
+     /* Ajusta la transparencia */
+     z-index: -1;
+     /* Coloca la imagen detrás del contenido */
+ }
+ .introducion p {
+    font-family: 'Georgia', serif;  /* Fuente con estilo antiguo y cursivo */
+    font-style: italic;             /* Hacer el texto cursivo */
+    color: #3e3e3e;                /* Color oscuro y elegante */
+    font-size: 1.2em;               /* Tamaño de letra un poco más grande */
+    line-height: 1.6;               /* Espaciado entre líneas para mayor legibilidad */
+    text-align: center;            /* Centrar el texto */
+    margin: 20px auto;             /* Margen alrededor del texto */
+    max-width: 800px;              /* Limitar el ancho del texto */
+    padding: 20px;                 /* Espacio interno */
+    border-left: 4px solid #2f2f2f; /* Línea de borde izquierda para resaltar */
+  }
+
+  .foto{
+    width: 50%;             /* Ajusta el tamaño de la imagen (puedes cambiar el porcentaje) */
+  height: auto;           /* Mantiene la proporción de la imagen */
+  display: block;         /* Hace que la imagen sea un bloque */
+  margin: 0 auto;         /* Centra la imagen horizontalmente */
+
+  }
+  .introducion img {
+    width: 40%;           /* Reduce el tamaño de la imagen al 50% del contenedor */
+    height: auto;         /* Mantiene la proporción de la imagen */
+    display: block;       /* Hace que la imagen sea un bloque */
+    margin: 20px auto;    /* Añade espacio arriba y abajo y centra la imagen */
+    border: 3px solid #2f2f2f; /* Añade un borde oscuro de 5px de grosor */
+  border-radius: 10px;       /* Bordes ligeramente redondeados para un toque elegante */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+  }
+
+  footer{
+    background-color: rgb(152, 160, 116);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+
+
+  }
