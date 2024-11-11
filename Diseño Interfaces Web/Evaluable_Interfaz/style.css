@@ -1,124 +1,264 @@
  header {
 
-     text-align: center;
+   text-align: center;
 
-     padding: 20px;
+   padding: 20px;
 
 
  }
 
  header h1 {
-     font-size: 2.5em;
-     font-weight: bold;
-     color: maroon;
-     margin: 0;
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 2.5em;
+   font-weight: bold;
+   color: maroon;
+   margin: 0;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
  }
 
- /*  header h1::after {
-    content: "";
-    display: block;
-    width: 80px; 
-    height: 4px; 
-    background-color: #f1c40f; 
-    margin: 10px auto 0; 
-} */
+
 
  header nav {
 
-     background-color: rgb(152, 160, 116);
-     height: 50px;
-     display: flex;
-     justify-content: center;
-     margin-top: 20px;
+   background-color: rgb(152, 160, 116);
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
 
 
  }
 
  header nav a {
 
-     color: black;
+   color: black;
 
-     margin: auto;
-     font-family: Verdana, Geneva, Tahoma, sans-serif;
+   margin: auto;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 
  }
 
  header nav a:hover {
-     background-color: #59a9c9;
-     /* Cambia el color de fondo al pasar el ratón */
-     padding: 10px;
-     /* Agrega  relleno al pasar el ratón */
-     border-radius: 5px;
-     /
+   background-color: #59a9c9;
+   /* Cambia el color de fondo al pasar el ratón */
+   padding: 10px;
+   /* Agrega  relleno al pasar el ratón */
+   border-radius: 5px;
+   /
  }
 
- html,body {
-    height: 100%;
-    
-  margin: 0;
-  
+ html,
+ body {
+   height: 100%;
 
-     position: relative;
+   margin: 0;
+
+
+   position: relative;
  }
 
  body::before {
-     content: "";
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
 
-     background-image: url('./bonit_vino.png');
-     background-size: cover;
-     /* Hace que la imagen cubra toda la página */
-     background-repeat: no-repeat;
-     background-position: center;
-     
-     opacity: 0.2;
-     /* Ajusta la transparencia */
-     z-index: -1;
-     /* Coloca la imagen detrás del contenido */
+   background-image: url('./bonit_vino.png');
+   background-size: cover;
+   /* Hace que la imagen cubra toda la página */
+   background-repeat: no-repeat;
+   background-position: center;
+
+   opacity: 0.2;
+   /* Ajusta la transparencia */
+   z-index: -1;
+   /* Coloca la imagen detrás del contenido */
  }
+
  .introducion p {
-    font-family: 'Georgia', serif;  /* Fuente con estilo antiguo y cursivo */
-    font-style: italic;             /* Hacer el texto cursivo */
-    color: #3e3e3e;                /* Color oscuro y elegante */
-    font-size: 1.2em;               /* Tamaño de letra un poco más grande */
-    line-height: 1.6;               /* Espaciado entre líneas para mayor legibilidad */
-    text-align: center;            /* Centrar el texto */
-    margin: 20px auto;             /* Margen alrededor del texto */
-    max-width: 800px;              /* Limitar el ancho del texto */
-    padding: 20px;                 /* Espacio interno */
-    border-left: 4px solid #2f2f2f; /* Línea de borde izquierda para resaltar */
-  }
+   font-family: 'Georgia', serif;
+   /* Fuente con estilo antiguo y cursivo */
+   font-style: italic;
+   /* Hacer el texto cursivo */
+   color: #3e3e3e;
+   /* Color oscuro y elegante */
+   font-size: 1.2em;
+   /* Tamaño de letra un poco más grande */
+   line-height: 1.6;
+   /* Espaciado entre líneas para mayor legibilidad */
+   text-align: center;
+   /* Centrar el texto */
+   margin: 20px auto;
+   /* Margen alrededor del texto */
+   max-width: 800px;
+   /* Limitar el ancho del texto */
+   padding: 20px;
+   /* Espacio interno */
+   border-left: 4px solid #2f2f2f;
+   /* Línea de borde izquierda para resaltar */
+ }
 
-  .foto{
-    width: 50%;             /* Ajusta el tamaño de la imagen (puedes cambiar el porcentaje) */
-  height: auto;           /* Mantiene la proporción de la imagen */
-  display: block;         /* Hace que la imagen sea un bloque */
-  margin: 0 auto;         /* Centra la imagen horizontalmente */
+ .foto {
+   width: 50%;
+   /* Ajusta el tamaño de la imagen (puedes cambiar el porcentaje) */
+   height: auto;
+   /* Mantiene la proporción de la imagen */
+   display: block;
+   /* Hace que la imagen sea un bloque */
+   margin: 0 auto;
+   /* Centra la imagen horizontalmente */
 
-  }
-  .introducion img {
-    width: 40%;           /* Reduce el tamaño de la imagen al 50% del contenedor */
-    height: auto;         /* Mantiene la proporción de la imagen */
-    display: block;       /* Hace que la imagen sea un bloque */
-    margin: 20px auto;    /* Añade espacio arriba y abajo y centra la imagen */
-    border: 3px solid #2f2f2f; /* Añade un borde oscuro de 5px de grosor */
-  border-radius: 10px;       /* Bordes ligeramente redondeados para un toque elegante */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
-  }
+ }
 
-  footer{
-    background-color: rgb(152, 160, 116);
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    margin-top: 70px;
+ .introducion img {
+   width: 40%;
+   /* Reduce el tamaño de la imagen al 50% del contenedor */
+   height: auto;
+   /* Mantiene la proporción de la imagen */
+   display: block;
+   /* Hace que la imagen sea un bloque */
+   margin: 20px auto;
+   /* Añade espacio arriba y abajo y centra la imagen */
+   border: 3px solid #2f2f2f;
+   /* Añade un borde oscuro de 5px de grosor */
+   border-radius: 10px;
+   /* Bordes ligeramente redondeados para un toque elegante */
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+   /* Sombra para dar profundidad */
+ }
+
+ footer {
+   background-color: rgb(152, 160, 116);
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   margin-top: 85px;
 
 
-  }
+ }
+
+ /*PAgina productos*/
+
+
+ /* Estilos específicos para la página de productos */
+ .productos-page header {
+   text-align: center;
+   padding: 20px;
+ }
+
+ .productos-page header h1 {
+   font-size: 2.5em;
+   font-weight: bold;
+   color: maroon;
+   margin: 0;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }
+
+
+ .productos-page header nav {
+   background-color: rgb(152, 160, 116);
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+ }
+
+ .pago {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+   font-size: 1.2em;
+   /* Tamaño de letra un poco más grande */
+   line-height: 1.6;
+   /* Espaciado entre líneas para mayor legibilidad */
+   text-align: left;
+   /* Centrar el texto */
+   margin: 20px auto;
+   /* Margen alrededor del texto */
+   max-width: 800px;
+   /* Limitar el ancho del texto */
+   padding: 20px;
+
+ }
+ .pago-texto {
+  flex: 1; 
+}
+
+ .pago img {
+
+  width: 20%; /* Ajusta el tamaño de la imagen al 20% del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin-left: 20px; /* Añade espacio a la izquierda para separar la imagen del texto */
+ }
+ .boton-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  height: 100px;           /* O cualquier altura que necesites */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* Contenedor principal para el formulario */
+.formulario-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el formulario */
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo para los párrafos (nombre de los campos) */
+.formulario p {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Estilo para los inputs y textarea */
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+/* Estilo para el textarea */
+.formulario textarea {
+  height: 70px;
+  resize: vertical;
+}
+
+/* Estilo para el botón */
+.formulario button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.formulario button:hover {
+  background-color: #4cae4c;
+}
