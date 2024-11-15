@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./estilo.css" />
+    <title>Juego Black Jack</title>
+  </head>
+  <header>
+    <h1><b>Juego de Black Jack</b></h1>
+  </header>
+  <body>
+    <div class="Juego-container" id="juego">
+      <div class="banca" id="banca">
+        <h3>Banca</h3>
+
+        <div class="cartas" id="cartas"></div>
+      </div>
+
+      <div class="resultados">
+        <h3>Resultados</h3>
+      </div>
+
+      <div class="jugador">
+        <h3>Jugador</h3>
+
+        <div class="jugada" id="jugada"></div>
+
+        <div class="botones">
+          <button id="pedirCarta">Pedir Carta</button>
+          <button id="plantarse">Plantarse</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"></script>
+    <script src="./objetos.js"></script>
+    <script src="juego.js"></script>
+  </body>
+</html>

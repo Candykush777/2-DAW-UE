@@ -3,17 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostrar carta</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Juego de Black Jack </title>
 </head>
 <body>
-    
-    
-    
+    <h1>Juego de Black Jack</h1>
 
-    <h1>Mostrar carta en tapete</h1>
-    <div id="tapete"></div>
+    <div class="tapete" id="tapete">
+        <!-- Recuadro de la Banca -->
+        <div class="recuadro" id="banca">
+            <div class="titulo">Banca</div>
+            <div class="cartas">
+                <!-- Las cartas de la banca se agregarán aquí -->
+            </div>
+        </div>
+
+        <!-- Recuadro del Jugador -->
+        <div class="recuadro" id="jugador">
+            <div class="titulo">Jugador</div>
+            <div class="cartas">
+                <!-- Las cartas del jugador se agregarán aquí -->
+            </div>
+        </div>
+
+        <!-- Botones para jugar -->
+        <div>
+            <button id="pedirCarta" onclick="pedirCarta()">Pedir Carta</button>
+            <button id="plantarse" onclick="plantarse()">Plantarse</button>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"></script>
-    <script src="./objetos.js"></script> 
-    
+    <script src="./objetos.js"></script>
+    <script src="juego.js"></script>
 </body>
 </html>

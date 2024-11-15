@@ -1,0 +1,42 @@
+.tapete {
+    background-color: darkgreen;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    border: 4px solid black;
+}
+
+.tapete img {
+
+    width: 90px;
+}
+
+button {
+    background-color: rgb(141, 139, 212);
+    border: 1px solid black;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.titulo {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.cartas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 70%;
+}
