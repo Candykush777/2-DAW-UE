@@ -34,10 +34,11 @@ body {
     background-position: center;
 
     /* Fondo semitransparente encima de la imagen */
-    background-color: rgba(255, 255, 255, 0.8);
+     background-color: rgba(255, 255, 255, 0.8); 
     /* Blanco con 80% de transparencia */
-    background-blend-mode: overlay;
+     background-blend-mode: overlay; 
     /* Mezcla el color con la imagen */
+     backdrop-filter: blur(4px); 
 }
 
 .banca {
@@ -50,6 +51,7 @@ body {
     margin-top: 10px;
 
     border: solid rgb(10, 10, 10) 2px;
+    border-radius: 5px;
 }
 
 .jugador {
@@ -64,32 +66,10 @@ body {
     /* Organiza los elementos verticalmente */
     justify-content: flex-start;
     /* Asegura que las cartas estén en la parte superior */
+    border-radius: 5px;
    
 }
 
-.resultados {
-    display: flex;
-
-    border: solid rgb(10, 10, 10) 2px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 290px;
-    height: 400px;
-    margin-top: 10px;
-    box-sizing: border-box;
-
-}
-
-.resultados h3 {
-    margin-top: 20px;
-    /* Remueve márgenes extra */
-    align-self: flex-start;
-    /* Alinea el título al inicio horizontalmente */
-    text-align: center;
-    width: 100%;
-
-}
 
 .botones {
     margin-top: auto;
@@ -140,6 +120,7 @@ button {
     background-color: rgba(22, 92, 28, 0.8);
     /* Verde más transparente */
     box-sizing: border-box;/* Incluye el borde y el relleno en las dimensiones totales */
+    border-radius: 5px;
 }
 
 .jugada {
@@ -159,6 +140,7 @@ button {
     background-color: rgba(22, 92, 28, 0.8);
     /* Verde más transparente */
     box-sizing: border-box;
+    border-radius: 5px;
 }
 
 #jugada img {
@@ -176,6 +158,7 @@ button {
     text-align: center;
     background-color: rgba(255, 215, 0, 0.6);
     background-blend-mode: overlay;
+    border-radius: 5px;
 }
 
 .resultados {
@@ -192,4 +175,31 @@ button {
     text-align: center; 
     color: #333; 
     line-height: 1.5; /* Aumenta el interlineado para mejor legibilidad */
+    border-radius: 5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra negra */
+}
+
+.resultados {
+    display: flex;
+
+    border: solid rgb(10, 10, 10) 2px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 290px;
+    height: 400px;
+    margin-top: 10px;
+    box-sizing: border-box;
+
+
+}
+
+.resultados h3 {
+    margin-top: 20px;
+    /* Remueve márgenes extra */
+    align-self: flex-start;
+    /* Alinea el título al inicio horizontalmente */
+    text-align: center;
+    width: 100%;
+
 }
