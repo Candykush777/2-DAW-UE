@@ -181,15 +181,15 @@ button {
 .resultados {
     font-family: 'Arial', Helvetica, sans-serif;
     font-size: 24px; /* Aumento del tamaño de la fuente */
-    font-weight: bold; /* Negrita para un aspecto más destacado */
+    font-weight: bold; 
     letter-spacing: 1px; /* Aumenta el espaciado entre letras */
-    padding: 20px; /* Aumento del padding para un mejor espaciado interno */
+    padding: 20px; 
     margin-left: 40px;
     margin-right: 40px;
     margin-bottom: 40px;
     background-color: rgba(109, 189, 236, 0.6);
     background-blend-mode: overlay;
-    text-align: center; /* Centra el texto */
-    color: #333; /* Color oscuro para mejor contraste */
+    text-align: center; 
+    color: #333; 
     line-height: 1.5; /* Aumenta el interlineado para mejor legibilidad */
 }
