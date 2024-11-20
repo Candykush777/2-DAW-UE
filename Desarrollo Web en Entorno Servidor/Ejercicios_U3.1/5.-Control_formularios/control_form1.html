@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <h1>Datos personales</h1>
+    <form action="control_form2.php" method="post">
+      <p>
+        <label id="indicar"
+          >Indique su dirección de correo :
+          <input type="email" name="correo" size="40"
+        /></label>
+      </p>
+      <p>
+        <label id="confirmar"
+          >Confirmar su dirección de correo :
+          <input type="email" name="correo2" size="40"
+        /></label>
+      </p>
+
+      <p>
+        Indique ssi desea recibir correos nuestros :
+        <select name="recibir">
+          <option value="-1">...</option>
+          <option value="1">Si</option>
+          <option value="0">No</option>
+        </select>
+      </p>
+      <p>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+      </p>
+    </form>
+  </body>
+</html>
