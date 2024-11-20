@@ -113,8 +113,10 @@ class Baraja {
         }, 1500); // Esperamos antes de llamar al callback
       } else if (sumaBanca > 21) {
         setTimeout(() => {
-          const mensaje = `La banca ha perdido con ${sumaBanca} puntos, ¡¡Ha ganado el Jugador sin necesidad de jugar!!`;
+          const mensaje = `La banca ha perdido con ${sumaBanca} puntos, ¡¡Ha ganado  ${jugador} sin necesidad de jugar!!`;
           contenedorResultados.innerHTML = `<p>${mensaje}</p>`;
+         
+
           callback(); // Finalizamos el juego llamando al callback
         }, 1500); // Esperamos antes de llamar al callback
       }
@@ -122,14 +124,11 @@ class Baraja {
 
     // Crear un intervalo para sacar cartas de manera controlada
     const intervalo = setInterval(() => {
-      if (sumaBanca<17) {
+      if (sumaBanca < 17) {
         sacarYMostrarCarta(); // Sacar y mostrar una carta
-        
-      }else{
+      } else {
         clearInterval(intervalo); // Detenemos el intervalo
       }
-      
-      
     }, 3500); // Repite cada 2 segundos para dar tiempo entre cartas
   }
 
@@ -164,14 +163,14 @@ function pedirCarta() {
     // Esperamos un tiempo antes de mostrar los puntos
     setTimeout(() => {
       sumaJugador += carta.puntos;
-      const mensaje = `El jugador ha pedido una carta. Puntos actuales: ${sumaJugador}`;
+      const mensaje = ` ${jugador} ha pedido una carta. Puntos actuales: ${sumaJugador}`;
       contenedorResultados.innerHTML = `<p>${mensaje}</p>`;
 
       if (sumaJugador > 21) {
-        const mensajePasar = `El jugador se ha pasado de 21 puntos con ${sumaJugador}. La banca gana con ${sumaBanca}.`;
+        const mensajePasar = ` ${jugador} se ha pasado de 21 puntos con ${sumaJugador}. La banca gana con ${sumaBanca}.`;
         contenedorResultados.innerHTML = `<p>${mensajePasar}</p>`;
         document.querySelector("#pedirCarta").disabled = true;
-        document.querySelector("#plantarse").disabled = true; 
+        document.querySelector("#plantarse").disabled = true;
         finalizarJuego();
       }
     }, 1500); // Esperamos .5 segundos para mostrar la carta antes del alert
@@ -180,7 +179,7 @@ function pedirCarta() {
 
 function plantarse() {
   jugadorPlantado = true;
-  const mensaje = `¡El jugador se planta con ${sumaJugador} puntos!`;
+  const mensaje = `¡ ${jugador} se planta con ${sumaJugador} puntos!`;
   contenedorResultados.innerHTML = `<p>${mensaje}</p>`;
   compararResultados(); // Comparamos los resultados después de que el jugador se plante
 }
@@ -198,29 +197,34 @@ function plantarse() {
   });
 } */
 
-function compararResultados() {
-  // Si la banca ha perdido, no hace falta comparar
-  if (sumaBanca > 21) {
-    return; // No mostramos nada porque ya se mostró el mensaje en mostrarCartasBanca
+  function compararResultados() {
+    // Limpiar mensajes anteriores al comienzo
+    contenedorResultados.innerHTML = ""; 
+  
+    // Si la banca ha perdido, no hace falta comparar
+    if (sumaBanca > 21) {
+      const mensaje = `La banca ha perdido con ${sumaBanca} puntos, ¡¡Ha ganado ${jugador} sin necesidad de jugar!!`;
+      contenedorResultados.innerHTML = `<p>${mensaje}</p>`;
+    } else if (sumaJugador > sumaBanca && sumaJugador <= 21) {
+      const mensaje = `¡${jugador} gana con ${sumaJugador} puntos frente a ${sumaBanca} de la banca!`;
+      contenedorResultados.innerHTML = `<p>${mensaje}</p>`;
+    } else if (sumaJugador < sumaBanca && sumaBanca <= 21) {
+      const mensaje = `La banca gana con ${sumaBanca} puntos frente a ${sumaJugador} de ${jugador}.`;
+      contenedorResultados.innerHTML = `<p>${mensaje}</p>`;
+    } else if (sumaJugador === sumaBanca && sumaJugador <= 21) {
+      const mensaje = `Empate con ${sumaJugador} puntos para ${jugador} y la banca.`;
+      contenedorResultados.innerHTML = `<p>${mensaje}</p>`;
+    } else {
+      const mensaje = `${jugador} se ha pasado de 21 puntos con ${sumaJugador} puntos.`;
+      contenedorResultados.innerHTML = `<p>${mensaje}</p>`;
+    }
+  
+    // Al final, borramos cualquier mensaje previo y mostramos solo el mensaje final
+    const mensajeFinal = `¡¡El Juego ha terminado!!`;
+    contenedorResultados.innerHTML += `<p>${mensajeFinal}</p>`; 
+  
+    finalizarJuego(); // Finalizamos el juego al comparar resultados
   }
-
-  // Comparamos puntos de la banca y el jugador
-  if (sumaJugador > sumaBanca && sumaJugador <= 21) {
-    const mensaje = `¡El jugador gana con ${sumaJugador} puntos frente a ${sumaBanca} de la banca!`;
-    contenedorResultados.innerHTML = `<p>${mensaje}</p>`;
-  } else if (sumaJugador < sumaBanca && sumaBanca <= 21) {
-    const mensaje = `La banca gana con ${sumaBanca} puntos frente a ${sumaJugador} del jugador.`;
-    contenedorResultados.innerHTML = `<p>${mensaje}</p>`;
-  } else if (sumaJugador === sumaBanca && sumaJugador <= 21) {
-    const mensaje = `Empate con ${sumaJugador} puntos para el jugador y la banca.`;
-    contenedorResultados.innerHTML = `<p>${mensaje}</p>`;
-  } else {
-    const mensaje = `El jugador se ha pasado de 21 puntos con ${sumaJugador} puntos.`;
-    contenedorResultados.innerHTML = `<p>${mensaje}</p>`;
-  }
-
-  finalizarJuego(); // Finalizamos el juego al comparar resultados
-}
 // Función para finalizar el juego
 function finalizarJuego() {
   // Desactivar los botones de acción del jugador (por ejemplo, "Pedir carta" y "Plantarse")
@@ -228,7 +232,7 @@ function finalizarJuego() {
   document.querySelector("#plantarse").disabled = true;
   // Si deseas, aquí podrías reiniciar el juego o realizar otras acciones.
 
-  alert("El juego ha terminado.");
+ 
 }
 
 // Función para que la banca saque cartas
