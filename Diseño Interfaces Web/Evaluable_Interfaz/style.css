@@ -1,10 +1,6 @@
  header {
-
    text-align: center;
-
    padding: 20px;
-
-
  }
 
  header h1 {
@@ -13,10 +9,7 @@
    color: maroon;
    margin: 0;
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
  }
-
-
 
  header nav {
 
@@ -26,18 +19,13 @@
    justify-content: center;
    margin-top: 20px;
    align-items: center;
-
-
  }
 
  header nav a {
 
    color: black;
-
    margin: auto;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-
  }
 
  header nav a:hover {
@@ -52,10 +40,8 @@
  html,
  body {
    height: 100%;
-
    margin: 0;
-
-
+   padding: 0;
    position: relative;
  }
 
@@ -66,13 +52,12 @@
    left: 0;
    width: 100%;
    height: 100%;
-
    background-image: url('./bonit_vino.png');
    background-size: cover;
    /* Hace que la imagen cubra toda la página */
    background-repeat: no-repeat;
    background-position: center;
-
+   background-attachment: fixed;
    opacity: 0.2;
    /* Ajusta la transparencia */
    z-index: -1;
@@ -81,52 +66,35 @@
 
  .introducion p {
    font-family: 'Georgia', serif;
-   /* Fuente con estilo antiguo y cursivo */
    font-style: italic;
-   /* Hacer el texto cursivo */
    color: #3e3e3e;
-   /* Color oscuro y elegante */
    font-size: 1.2em;
-   /* Tamaño de letra un poco más grande */
    line-height: 1.6;
    /* Espaciado entre líneas para mayor legibilidad */
    text-align: center;
-   /* Centrar el texto */
    margin: 20px auto;
-   /* Margen alrededor del texto */
    max-width: 800px;
-   /* Limitar el ancho del texto */
    padding: 20px;
-   /* Espacio interno */
    border-left: 4px solid #2f2f2f;
-   /* Línea de borde izquierda para resaltar */
+
  }
 
  .foto {
    width: 50%;
-   /* Ajusta el tamaño de la imagen (puedes cambiar el porcentaje) */
    height: auto;
    /* Mantiene la proporción de la imagen */
    display: block;
    /* Hace que la imagen sea un bloque */
    margin: 0 auto;
-   /* Centra la imagen horizontalmente */
-
  }
 
  .introducion img {
    width: 40%;
-   /* Reduce el tamaño de la imagen al 50% del contenedor */
    height: auto;
-   /* Mantiene la proporción de la imagen */
    display: block;
-   /* Hace que la imagen sea un bloque */
    margin: 20px auto;
-   /* Añade espacio arriba y abajo y centra la imagen */
    border: 3px solid #2f2f2f;
-   /* Añade un borde oscuro de 5px de grosor */
    border-radius: 10px;
-   /* Bordes ligeramente redondeados para un toque elegante */
    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
    /* Sombra para dar profundidad */
  }
@@ -137,12 +105,7 @@
    display: flex;
    justify-content: center;
    margin-top: 85px;
-
-
  }
-
- /*PAgina productos*/
-
 
  /* Estilos específicos para la página de productos */
  .productos-page header {
@@ -158,101 +121,125 @@
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  }
 
-
-
-
  .pago {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
    font-size: 1.2em;
-   /* Tamaño de letra un poco más grande */
    line-height: 1.6;
-   /* Espaciado entre líneas para mayor legibilidad */
    text-align: left;
-   /* Centrar el texto */
    margin: 20px auto;
-   /* Margen alrededor del texto */
    max-width: 800px;
-   /* Limitar el ancho del texto */
    padding: 20px;
-
  }
+
  .pago-texto {
-  flex: 1; 
-}
+   flex: 1;
+ }
 
  .pago img {
 
-  width: 20%; /* Ajusta el tamaño de la imagen al 20% del contenedor */
-  height: auto; /* Mantiene la proporción de la imagen */
-  margin-left: 20px; /* Añade espacio a la izquierda para separar la imagen del texto */
+   width: 20%;
+   height: auto;
+   margin-left: 20px;
  }
+
  .boton-container {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center;     /* Centra verticalmente */
-  height: 100px;           /* O cualquier altura que necesites */
-}
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100px;
+   gap: 80px;
+   
+ }
 
-button {
+ button {
+   padding: 10px 20px;
+   font-size: 1em;
+   cursor: pointer;
+   border-radius:5px ;
+   font-family: 'Georgia', serif;
+   border: solid black 2px;
+   font-size: 18px;
+ }
+
+ /* Contenedor principal para el formulario */
+ .formulario-container {
+   max-width: 500px;
+   margin: auto;
+   padding: 10px;
+   background-color: rgba(152, 160, 116, 0.452);
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+
+ .formulario {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .formulario p {
+   margin-bottom: 5px;
+   font-weight: bold;
+ }
+
+ .formulario input,
+ .formulario textarea {
+   width: 90%;
+   padding: 10px;
+   font-size: 1em;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   margin-bottom: 15px;
+ }
+
+ .formulario textarea {
+   height: 70px;
+   resize: vertical;
+ }
+
+ .formulario button {
+   padding: 10px 5px;
+   font-size: 1em;
+   background-color: #053605;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   transition: background-color 0.3s;
+ }
+
+ .formulario button:hover {
+   background-color: #3f2c72;
+ }
+ .btn-volver{
+  display: inline-block;
   padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
-}
+  font-size: 18px;
+  background-color: #e8ebee;
+  color: black;
+  text-decoration: none;
+  border: solid black 2px;
+  border-radius: 5px;
+  font-family: 'Georgia', serif;
 
-/* Contenedor principal para el formulario */
-.formulario-container {
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
-  background-color: rgba(152, 160, 116, 0.452);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+ }
+ .btn-formulario{
+  display: inline-block;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #e8ebee;
+  color: black;
+  text-decoration: none;
+  border: solid black 2px;
+  border-radius: 5px;
+  font-family: 'Georgia', serif;
 
-/* Estilo para el formulario */
-.formulario {
+ }
+ .btn-container {
   display: flex;
-  flex-direction: column;
-}
-
-/* Estilo para los párrafos (nombre de los campos) */
-.formulario p {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-/* Estilo para los inputs y textarea */
-.formulario input,
-.formulario textarea {
-  width: 90%;
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 15px;
-}
-
-/* Estilo para el textarea */
-.formulario textarea {
-  height: 70px;
-  resize: vertical;
-}
-
-/* Estilo para el botón */
-.formulario button {
-  padding: 10px 5px;
-  font-size: 1em;
-  background-color: #053605;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-/* Efecto al pasar el mouse sobre el botón */
-.formulario button:hover {
-  background-color: #3f2c72;
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 20px; 
 }
