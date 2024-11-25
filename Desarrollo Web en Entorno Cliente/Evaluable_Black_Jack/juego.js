@@ -8,5 +8,5 @@ let jugador =prompt("Introduce tu nombre");
 
 
 turnoBanca();
-/* turnoJugador(); */
+/* turnoJugador(); me funciona mejor sin esto*/
 

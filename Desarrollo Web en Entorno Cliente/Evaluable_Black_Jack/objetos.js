@@ -244,3 +244,6 @@ baraja.barajar();
 // Escuchadores de eventos para los botones
 document.querySelector("#pedirCarta").addEventListener("click", pedirCarta);
 document.querySelector("#plantarse").addEventListener("click", plantarse);
+function reiniciarPagina() {
+  location.reload(); // Recarga la página actual.
+}
