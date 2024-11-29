@@ -14,18 +14,56 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Document</title>
   </head>
   <body>
     <main class="container">
       <h1>Página de Gestión de Usuarios</h1>
       <div class="row">
-        <div class="col-8">
+        <!-- Fila para las tarjetas y formulario de registro -->
+        <div class="col-md-8">
           <h2>Datos</h2>
+          <div class="row">
+            <select id="selected">
+              >
+              <option>Edad</option>
+              >
+              <option value="0">Todos los géneros</option>
+              <option value="1">Masculino</option>
+              <option value="2">Femenino</option>
+            </select>
+            <button class="btn btn-primary" id="btnFiltrar">Filtrar</button>
+          </div>
+          <!-- Tarjetas -->
+          <div class="row mt-2 row-cols-1 row-cols-md-3 g-4">
+            <!-- Primera tarjeta -->
+            <!-- <div class="col">
+              <div class="card">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/5363/5363451.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title 1</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div> -->
+          </div>
         </div>
-        <div class="col-4">
-          <h2>Registro</h2>
 
+        <!-- Columna para el formulario de registro -->
+        <div class="col-md-4">
+          <h2>Registro</h2>
           <div class="mb-3">
             <label for="nombreInput" class="form-label"
               >Introduce tu nombre</label
@@ -42,27 +80,23 @@
             <label for="passInput" class="form-label"
               >Introduce tu Contraseña</label
             >
-            <input
-              type="password"
-              class="form-control"
-              id="passInput"
-            />
+            <input type="password" class="form-control" id="passInput" />
+          </div>
+          <div class="mb-3">
+            <label for="edadInput" class="form-label"
+              >Introduce tu Edad</label
+            >
+            <input type="number" class="form-control" id="edadInput" />
           </div>
           <div class="mb-3">
             <select class="form-select" id="generoInput">
-                <option>Masculino</option>
-                <option>Femenino</option>
+              <option value="1">Masculino</option>
+              <option value="2">Femenino</option>
             </select>
           </div>
           <div class="mb-3 form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="checkGuardar"
-            />
-            <label class="form-check-label" for="checkGuardar"
-              >Guardar</label
-            >
+            <input type="checkbox" class="form-check-input" id="checkInput" />
+            <label class="form-check-label" for="checkInput">Guardar</label>
           </div>
           <button id="btnGuardar" class="btn btn-primary">Submit</button>
         </div>
