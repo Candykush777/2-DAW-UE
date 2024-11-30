@@ -8,18 +8,13 @@ let btnGuardar = document.querySelector("#btnGuardar");
 let divResultados = document.querySelector("div.row.g-4");
 
 let usuarios = [];
-
- let selectGenero = document.getElementById("selected"); 
-
-let btnFiltrar = document.getElementById("btnFiltrar");
-
-/* selectGenero.removeEventListener("change", filtrarUsuario); */
+let edadSelector =document.querySelector("#edadSelector");
+let generoSelector =document.querySelector("#generoSelector");
+let btnFiltrar = document.querySelector("#btnFiltrar");
 
 btnFiltrar.addEventListener("click", filtrarUsuario);
 
-/* selectGenero.addEventListener("change", function () {
-  filtrarUsuario();
-}); */
+
 
 btnGuardar.addEventListener("click", (e) => {
   //sacar toda la información
@@ -46,8 +41,6 @@ btnGuardar.addEventListener("click", (e) => {
         icon: "success",
       });
 
-     
-
       let usuario = { nombre, email, edad, genero };
       usuarios.push(usuario);
 
@@ -63,6 +56,7 @@ btnGuardar.addEventListener("click", (e) => {
     }
   }
 });
+
 
 /* inputPass.addEventListener("keyup", (e) => {
   console.log(e.target.value.length); //cava vez que pulso quiero saber cuantos caracteres hay en el input
@@ -117,22 +111,33 @@ function agregarNodo(nombre, email, edad, genero) {
 }
 
 function filtrarUsuario() {
-  let generoSelecionado = parseInt(selectGenero.value);
+  /* const seleccion = document.querySelector("#selected").value; */
+  const edadSelecionada =edadSelector.value;
+  const generoSelecionado =generoSelector.value;
 
-  // Limpiamos los resultados previos
   divResultados.innerHTML = "";
 
-  let usuariosFiltrados = [];
+  let usuariosFiltrados =usuarios;
 
- 
-  if (generoSelecionado === 0) {
-    usuariosFiltrados = usuarios;  // Mostrar todos los usuarios
-  } else {
-    
-    usuariosFiltrados = usuarios.filter(usuario => usuario.genero === generoSelecionado);
+  if (generoSelecionado !== "0") {
+    usuariosFiltrados = usuariosFiltrados.filter((usuario)=>usuario.genero ==generoSelecionado);
+  } 
+
+  //según edad
+
+ /*  if (edadSelecionada === "edad") {
+    usuariosFiltrados = usuarios;
+  } */
+  if (edadSelecionada === "mayorEdad") {
+    usuariosFiltrados = usuariosFiltrados.filter(
+      (usuario) => parseInt(usuario.edad) >= 18
+    );
+  } else if (edadSelecionada === "menorEdad") {
+    usuariosFiltrados = usuariosFiltrados.filter(
+      (usuario) => parseInt(usuario.edad) < 18
+    );
   }
 
-  
   usuariosFiltrados.forEach((usuario) => {
     agregarNodo(usuario.nombre, usuario.email, usuario.edad, usuario.genero);
   });
