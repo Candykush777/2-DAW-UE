@@ -1,0 +1,102 @@
+html {
+    background-color: rgba(169, 169, 169, 0.226);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+p {
+    margin-top: 0;
+    
+   
+    margin-right: 3px;
+    margin-left: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.escritorio {
+    border-right: solid black 1px;
+    border-left: solid black 1px;
+    margin-top: 0;
+    width: 100%;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.internet {
+    border-right: solid black 1px;
+    border-left: solid black 1px;
+    margin-top: 0;
+    width: 100%;
+    margin-left: 80px;
+    margin-right: 80px;
+    height: 55%;
+}
+
+h1 {
+
+    background-color: rgba(34, 68, 27, 0.884);
+    color: ghostwhite;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    border-radius: 5px 5px 0px 0px;
+    font-size: 45px;
+}
+
+h2 {
+    text-align: center;
+    background-color: rgba(48, 82, 40, 0.884);
+    color: ghostwhite;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 23px;
+}
+
+.estiloEditor,
+.estiloNavegador {
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    /* margin-top: 5px;
+    margin-bottom: 10px; */
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+
+
+h3 {
+    color: ghostwhite;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(38, 135, 173);
+    border-radius: 5px 5px 0px 0px;
+}
+
+
+
+
+/* 
+
+
+
+p {
+    width: 95%;
+    
+    border-radius: 0 0 5px 5px;
+    padding: 10px;
+    margin-top: 0%;
+} */
+
+/* .container {
+
+display: flex;
+justify-content: space-between;
+gap: 10px;
+width: 100%;
+} */
