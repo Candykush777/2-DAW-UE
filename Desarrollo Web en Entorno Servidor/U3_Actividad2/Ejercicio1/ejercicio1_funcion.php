@@ -24,7 +24,7 @@
             $a = $_REQUEST['numero1'];
             $b = $_REQUEST['numero2'];
             $c = $_REQUEST['numero3'];
-           /*  $operar = $_REQUEST['mayorNumero']; */ //isset 
+           /*  $operar = $_REQUEST['mayorNumero']; */ //esto no me sirve para nada en realidad 
 
 
             function mayorNumero($x, $y, $z)
