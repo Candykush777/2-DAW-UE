@@ -4,21 +4,23 @@ let inputPrioridad = document.querySelector("#prioridad");
 let inputFecha = document.querySelector("#fecha");
 let checkPrioritaria = document.querySelector("#checkInput");
 let btnAgregar = document.querySelector("#btnAgregar");
-let divresultados = document.querySelector("#tareas");
+let divResultados = document.querySelector("#tareas");
+let filtroSelect = document.querySelector("#filtroSelect"); 
 
 let tareas = [];
-let contador = 1; // ponems 1 para que los id empeicen en 1
+let id = 1; // ponems 1 para que los id empeicen en 1
 
-//Vamos a dar vida al boton agregar con la logica necesaria
+
 
 btnAgregar.addEventListener("click", () => {
-  let nombre = inputNombre.value;
+  let titulo = inputNombre.value;
   let descripcion = inputDescripcion.value;
   let prioridad = inputPrioridad.value;
   let fecha = inputFecha.value;
+  let prioritaria = checkPrioritaria.checked;
   if (checkPrioritaria.checked) {
     if (
-      nombre.length > 0 &&
+      titulo.length > 0 &&
       descripcion.length > 0 &&
       prioridad.length > 0 &&
       fecha.length > 0
@@ -31,8 +33,8 @@ btnAgregar.addEventListener("click", () => {
       });
 
       const nuevaTarea = new tarea(
-        contador,
-        nombre,
+        id,
+        titulo,
         descripcion,
         fecha,
         prioritaria,
@@ -40,14 +42,16 @@ btnAgregar.addEventListener("click", () => {
         false,
         getImagenPorPrioridad(prioridad)
       );
+      /* console.log("Tarea creada:", nuevaTarea); // Verificar contenido */
+/* tareas.push(nuevaTarea); */
       tareas.push(nuevaTarea);
-      contador++;
+      id++;
       agregarNodoObjeto(nuevaTarea);
       clearInputs();
 
-      agregarNodo(nombre, descripcion, prioridad, fecha);
+    /*   agregarNodo(nombre, descripcion, prioridad, fecha);
 
-      clearInputs();
+      clearInputs(); */
     } else {
       Swal.fire({
         title: "Error",
@@ -99,29 +103,34 @@ function agregarNodoObjeto(tarea) {
 
   let texto = document.createElement("p");
   texto.className = "card-text";
-  titulo.textContent = tarea.descripcion;
+  texto.textContent = tarea.descripcion;
   /* texto.innerText = descripcion; */
 
   let textoFecha = document.createElement("p");
   textoFecha.className = "card-text";
-  textoFecha.innerText = `Fecha máxima <strong>${tarea.fecha}</strong>`;
+  textoFecha.innerText = `Fecha máxima: ${tarea.fecha}`;
 
   let completarBnt = document.createElement("button");
-  completarBnt.className = "btn btn-success mt-2"; //es un boton de boottrap con otroe estilo, verde para verificar
+  completarBnt.className = "btn btn-success mt-2";
   completarBnt.textContent = "Completar";
-  /* completarBnt.innerText = "Completar"; */
-  completarBnt.addEventListener("click", () =>
-    completarTarea(tarea.id, completarBnt)
-  );
-
-  /*   completarBnt.addEventListener("click", () => {
+  
+  // El evento ahora elimina directamente la tarea del DOM y del array
+  completarBnt.addEventListener("click", () => {
+    // Muestra el mensaje de tarea completada
     Swal.fire({
       title: "Tarea Completada",
-      text: `"${nombre}" se ha marcado como completada`,
+      text: `"${tarea.titulo}" se ha marcado como completada`,
       icon: "success",
     });
-    columna.remove(); //elimina la tarjeta
-  }); */
+
+    // Elimina el nodo completo (columna que contiene la carta)
+    columna.remove();
+
+    // Elimina la tarea del array
+    tareas = tareas.filter((tareaItem) => tareaItem.id !== tarea.id);
+  });
+
+
 
   bodyCard.append(titulo);
   bodyCard.append(texto);
@@ -132,7 +141,7 @@ function agregarNodoObjeto(tarea) {
   carta.append(bodyCard);
   columna.append(carta);
 
-  divresultados.append(columna);
+  divResultados.append(columna);
 }
 
 function getImagenPorPrioridad(prioridad) {
@@ -144,35 +153,27 @@ function getImagenPorPrioridad(prioridad) {
     return "https://static-00.iconduck.com/assets.00/high-priority-icon-1024x1024-ryazhwgn.png";
   }
 }
-//aqui aunque se llame nodoColumna deja mas claroq ue es une elemento del DOM y no pensamos que es algo de boottrap
-//pero es como si fuese la variable columna
-function completarTarea(id, nodoColumna) {
-  let tareaCompletada = tareas.find((tarea) => tarea.id === id);
 
-  if (tareaCompletada) {
-    Swal.fire({
-      title: "Tarea Completada",
-      text: `"${tareaCompletada.titulo}" se ha marcado como completada`,
-      icon: "success",
-    });
-    nodoColumna.remove(); // eliminamos la tarea del DOM
-    tareas = tareas.filter((tarea) => tarea.id !== id); //elimina la tarea del array principal
-  }
-}
-
-filtroSelect.addEventListener("change", () => {
+function aplicarFiltro() {
   let filtrar = filtroSelect.value;
+  
   let tareasFiltradas;
 
+  // Filtrar las tareas dependiendo de la prioridad seleccionada
   if (filtrar !== "1") {
-    tareasFiltradas = tareas.filter((tarea) => tarea.prioridad === filtro);
+    // Filtrar por prioridad seleccionada (cuando no es "1")
+    tareasFiltradas = tareas.filter((tarea) => tarea.prioridad === filtrar);
+  } else {
+    // Si no hay filtro ("1"), tomar todas las tareas
+    tareasFiltradas = [...tareas];
   }
-});
 
-function actualizarListaFiltrada(tareasFiltradas) {
-  divresultados.innerHTML = "";
-
+  
+  divResultados.innerHTML = "";
   tareasFiltradas.forEach((tarea) => {
-    agregarNodoObjeto(tarea); //llama a la funcion que digamos renderiza la tarea
+    agregarNodoObjeto(tarea); // 
   });
+ 
 }
+
+
