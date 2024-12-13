@@ -10,7 +10,11 @@ let filtroSelect = document.querySelector("#filtroSelect");
 let tareas = [];
 let id = 1; // ponems 1 para que los id empeicen en 1
 
+//Aqui voy  usar un change xq no hay boton y es la manera mas simple
+filtroSelect.addEventListener("change",() =>{
+  aplicarFiltro();
 
+})
 
 btnAgregar.addEventListener("click", () => {
   let titulo = inputNombre.value;
@@ -165,7 +169,7 @@ function aplicarFiltro() {
     tareasFiltradas = tareas.filter((tarea) => tarea.prioridad === filtrar);
   } else {
     // Si no hay filtro ("1"), tomar todas las tareas
-    tareasFiltradas = [...tareas];
+    tareasFiltradas = tarea;
   }
 
   
