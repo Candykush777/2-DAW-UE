@@ -1,4 +1,4 @@
-let inputID =document.querySelector("#filtroID");
+let inputID =document.querySelector("#filtroId");
 let precioSelector = document.querySelector("#filtroPrecio");
 let categoriaSelector =document.querySelector("#filtroCategoria");
 let divResultados = document.querySelector("#productos");
@@ -96,8 +96,9 @@ function filtrado(){
 
 
     let precioFiltrado=precioSelector.value;
-
-    let productosFiltrados;
+    let filtarCategoria=categoriaSelector.value;
+    let elegirId=inputID.value;
+    let productosFiltrados=products;
 
     if (precioFiltrado === "1") {
 
@@ -111,11 +112,41 @@ function filtrado(){
 
         productosFiltrados=products.filter((product)=>product.price >40)
         
-    }else{
+    }
+    //Por categoria
+    
+    
+    if (filtarCategoria ==="B") {
+      productosFiltrados = productosFiltrados.filter(
+        (product) => product.category === "beauty"
+      );
+      
+    }else if(filtarCategoria ==="F"){
+      productosFiltrados = productosFiltrados.filter(
+        (product) => product.category === "fragrances"
+      );
 
-        productosFiltrados=products;
+    }else if (filtarCategoria === "FF") {
+      productosFiltrados = productosFiltrados.filter(
+        (product) => product.category === "furniture"
+      );
+      
+    }else if (filtarCategoria ==="G") {
+      productosFiltrados = productosFiltrados.filter(
+        (product) => product.category === "groceries"
+      );
+      
     }
 
+    //filtro para ID
+    
+    if (elegirId.trim() !== "") {
+
+      productosFiltrados=productosFiltrados.filter((products) => products.id === Number(elegirId));
+      
+    }
+
+                  
     divResultados.innerHTML=""; 
 
     productosFiltrados.forEach((product)=> {
@@ -124,7 +155,3 @@ function filtrado(){
     });
         
     }
-
-
-
-
