@@ -1,0 +1,117 @@
+header {
+    font-family: "Lobster", sans-serif;
+    color: rgb(119, 119, 119);
+    text-align: center;
+}
+
+h2 {
+    font-family: "Lobster", sans-serif;
+    color: rgb(119, 119, 119);
+    text-align: center;
+}
+
+p {
+    font-family: "Lobster", sans-serif;
+    color: rgb(119, 119, 119);
+    text-align: center;
+}
+
+nav {
+    font-family: "Lobster", sans-serif;
+    color: rgb(119, 119, 119);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.content_wrapper {
+    border-top: solid grey 1px;
+    display: flex;
+    gap: 20px;
+}
+
+main {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    border: solid grey 1px;
+    border-radius: 20px;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.foto1 {
+    width: 70%;
+    border-radius: 20px;
+    height: 50%;
+}
+
+.foto2 {
+    width: 100%;
+    border-radius: 20px;
+    height: 40%;
+}
+
+.container-foto2 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border: solid grey 1px;
+    border-radius: 20px;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.articles {
+    display: flex;
+    padding: 20px;
+    text-align: center;
+    gap: 20px;
+    border-bottom: solid grey 1px;
+}
+
+article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: solid grey 1px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.foto3 {
+    width: 100%;
+    border-radius: 20px;
+    height: 40%;
+}
+
+.foto4 {
+    width: 100%;
+    border-radius: 20px;
+    height: 40%;
+}
+
+.foto5 {
+
+    width: 100%;
+    border-radius: 20px;
+    height: 40%;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Lobster", sans-serif;
+    color: rgb(119, 119, 119);
+}
+
+footer img {
+    width: 20%;
+}
