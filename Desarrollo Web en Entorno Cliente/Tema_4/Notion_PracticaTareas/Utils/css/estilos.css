@@ -1,0 +1,13 @@
+#tarea{
+
+width: 100%;
+    background-color: antiquewhite;
+    border: solid black 1px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.container{
+
+
+    padding: 20px;
+}
