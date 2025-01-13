@@ -1,0 +1,31 @@
+header {
+
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+header h1{
+size: 50px;
+    
+    background-color: rgb(252, 253, 253);
+}
+
+body {
+    background-image: url('../images/viajes.webp');
+    background-size: cover;
+    /* Asegúrate de que la imagen cubra todo el fondo */
+    background-position: center;
+    margin: 0;
+    filter: opacity(0.9);
+    
+
+}
+
+
+.container {
+    position: relative;
+    border-radius: 5%;
+    border: solid black 1px;
+    padding: 10%;
+    background-color: rgb(159, 216, 211);
+}
