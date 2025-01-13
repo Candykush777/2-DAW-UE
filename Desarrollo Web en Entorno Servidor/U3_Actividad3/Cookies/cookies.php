@@ -28,11 +28,6 @@ if(isset($_REQUEST['borrarCookie'])) {
     $backgroundcolor = "#ffffff";
 }
 ?>
-
-
-
-
-
  <!DOCTYPE html>
  <html lang="en">
  <head>
