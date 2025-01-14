@@ -1,0 +1,15 @@
+h1{
+padding: 5%;
+    text-align: center;
+    background-color: antiquewhite;
+}
+body {
+    background-color: lightblue !important; 
+  }
+
+  .container.mt-5{
+
+    border: solid black;
+    padding: 10%;
+    border-radius: 10px;
+  }
