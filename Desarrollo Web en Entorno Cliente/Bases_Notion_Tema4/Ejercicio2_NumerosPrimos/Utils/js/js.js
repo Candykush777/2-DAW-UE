@@ -43,7 +43,7 @@ function esPrimo(numero) {
 
   //comprobamos si tiene divisores sqrt es la raiz y asi se comprueba
 
-  for (let i = 2; i < Math.sqrt(numero); i++) {
+  for (let i = 2; i <= Math.sqrt(numero); i++) { 
     if (numero % i === 0) {
       return false;
     }
