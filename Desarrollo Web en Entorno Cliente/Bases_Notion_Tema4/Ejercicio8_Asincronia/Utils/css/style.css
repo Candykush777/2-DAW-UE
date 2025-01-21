@@ -1,0 +1,15 @@
+#productos .col-4 {
+    margin-bottom: 20px; 
+    padding-left: 15px;  
+    padding-right: 15px;
+    
+   
+    
+  }
+
+  #carrito{
+
+    border: solid black 2px;
+    border-radius: 5px;
+    background-color: blanchedalmond;
+  }

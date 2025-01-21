@@ -61,13 +61,17 @@ function crearTweettimeLine(tweet) {
   cardSubtitle.classList.add("card-subtitle", "mb-2", "text-muted");
   cardSubtitle.textContent = tweet.tematica;
 
+  let cardCategoria = document.createElement("h5");
+  cardCategoria.classList.add("card-subtitle", "mb-2");
+  cardCategoria.textContent = tweet.categoria; //repasar esto, esta bien ok
+
+
+
   let textArea = document.createElement("textarea");
   textArea.classList.add("form-control", "mb-2");
   textArea.placeholder = "Escribe tu contenido aquí...";
 
-  let cardCategoria = document.createElement("h5");
-  cardCategoria.classList.add("card-subtitle", "mb-2");
-  cardCategoria.textContent = tweet.categoria; //repasar esto, esta bien ok
+
 
   //boton guardar
 
@@ -99,9 +103,9 @@ function crearTweettimeLine(tweet) {
       });
       return;
     }
+    tweet.mensaje = contenido;
 
-    textArea.remove();
-    btnGuardar.remove();
+   
 
     //creamos el contenido del tweet y el contador de caracteres
 
@@ -115,12 +119,16 @@ function crearTweettimeLine(tweet) {
         contador.classList.add("text-muted"); //para que solo se vea al final el numero de letras en el tweet
     contador.innerHTML = `<b>${contenido.length} caracteres</b>`;
 
+    
+
+    textArea.remove();
+    btnGuardar.remove();
+
     cardBody.appendChild(cardText);
     cardBody.appendChild(contador);
+  
 
-    //limpiamos el formulario para mas entradas en el timeline
-
-    /* formulario.reset(); */
+    
   });
 }
 
@@ -142,14 +150,15 @@ function aplicarFiltro() {
     tweetsFiltrados.forEach((tweet) => {
       crearTweettimeLine(tweet);
     });
-  }else{
+  } else{
       //sino hay filtro mostramos todos los tweets
     timeLine.innerHTML = "";
     tweets.forEach((tweet) => {
       crearTweettimeLine(tweet);
     });
   
-  }
+  } 
 }
+
 // Añadir evento para el filtro
 filtroCategoria.addEventListener("change", aplicarFiltro);
