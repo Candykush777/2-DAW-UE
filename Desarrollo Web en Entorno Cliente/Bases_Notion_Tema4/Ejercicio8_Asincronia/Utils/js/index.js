@@ -164,88 +164,94 @@ eliminarCarritoBtn.addEventListener("click", (e) => {
   listaCarritoProducto.innerHTML = "";
 });
 
-function aplicarFiltro() {
-  let filtrar = document.querySelector("#filtrar").value;
-  let filtrarCategoria = document.querySelector("#filtrarCategoria").value;
 
-  // Inicializamos productosFiltrados con todos los productos
-  let productosFiltrados = [...usuarios];
 
-  // Obtener precio máximo y mínimo de los productos
-  let precioMaximo = Math.max(...usuarios.map((producto) => producto.price));
-  let precioMinimo = Math.min(...usuarios.map((producto) => producto.price));
 
-  // Filtrar por precio
-  if (filtrar) {
-    switch (filtrar) {
-      case "1":
-        productosFiltrados = productosFiltrados.filter(
-          (producto) => producto.price === precioMinimo
-        );
-        break;
-
-      case "2":
-        productosFiltrados = productosFiltrados.filter(
-          (producto) => producto.price === precioMaximo
-        );
-        break;
-
-      case "3":
-        productosFiltrados = productosFiltrados.filter(
-          (producto) => producto.price <= 100
-        );
-        break;
-
-      case "4":
-        productosFiltrados = productosFiltrados.filter(
-          (producto) => producto.price > 100
-        );
-        break;
-
-      default:
-        // Si no hay filtro de precio, asignamos todos los productos
-        productosFiltrados = productosFiltrados;
-        break;
+  // Inicializamos productosFiltrados con todos los productos de usuarios
+  function aplicarFiltro() {
+    let filtrar = filtrado.value;
+    let filtrarCategoria = filtradoCategoria.value;
+  
+    // Inicializamos productosFiltrados directamente con usuarios
+    let productosFiltrados = usuarios;
+  
+    // Obtener precio máximo y mínimo de los productos
+    let precioMaximo = Math.max(...usuarios.map((producto) => producto.price));
+    let precioMinimo = Math.min(...usuarios.map((producto) => producto.price));
+  
+    // Filtrar por precio
+    if (filtrar) {
+      switch (filtrar) {
+        case "1":
+          productosFiltrados = productosFiltrados.filter(
+            (producto) => producto.price === precioMinimo
+          );
+          break;
+  
+        case "2":
+          productosFiltrados = productosFiltrados.filter(
+            (producto) => producto.price === precioMaximo
+          );
+          break;
+  
+        case "3":
+          productosFiltrados = productosFiltrados.filter(
+            (producto) => producto.price <= 100
+          );
+          break;
+  
+        case "4":
+          productosFiltrados = productosFiltrados.filter(
+            (producto) => producto.price > 100
+          );
+          break;
+  
+        default:
+          // Si no hay filtro de precio, asignamos todos los productos
+          productosFiltrados = productosFiltrados;
+          break;
+      }
     }
-  }
-
-  // Filtrar por categoría
-  if (filtrarCategoria) {
-    switch (filtrarCategoria) {
-      case "5":
-        productosFiltrados = productosFiltrados.filter(
-          (producto) => producto.category === "men's clothing"
-        );
-        break;
-
-      case "6":
-        productosFiltrados = productosFiltrados.filter(
-          (producto) => producto.category === "women's clothing"
-        );
-        break;
-
-      case "7":
-        productosFiltrados = productosFiltrados.filter(
-          (producto) => producto.category === "electronics"
-        );
-        break;
-
-      case "8":
-        productosFiltrados = productosFiltrados.filter(
-          (producto) => producto.category === "jewelery"
-        );
-        break;
-
-      default:
-        // Si no hay filtro de categoría, asignamos todos los productos
-        productosFiltrados = productosFiltrados;
-        break;
+  
+    // Filtrar por categoría
+    if (filtrarCategoria) {
+      switch (filtrarCategoria) {
+        case "5":
+          productosFiltrados = productosFiltrados.filter(
+            (producto) => producto.category === "men's clothing"
+          );
+          break;
+  
+        case "6":
+          productosFiltrados = productosFiltrados.filter(
+            (producto) => producto.category === "women's clothing"
+          );
+          break;
+  
+        case "7":
+          productosFiltrados = productosFiltrados.filter(
+            (producto) => producto.category === "electronics"
+          );
+          break;
+  
+        case "8":
+          productosFiltrados = productosFiltrados.filter(
+            (producto) => producto.category === "jewelery"
+          );
+          break;
+  
+        default:
+          // Si no hay filtro de categoría, asignamos todos los productos
+          productosFiltrados = productosFiltrados;
+          break;
+      }
     }
+  
+    // Mostrar los productos filtrados
+    mostrarProductos(productosFiltrados);
   }
+  
 
-  // Mostrar los productos filtrados
-  mostrarProductos(productosFiltrados);
-}
 
 // Función para mostrar los productos filtrados
 function mostrarProductos(productos) {
