@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tienda Online</title>
     <link rel="stylesheet" href="./Utils/css/style.css" />
 
@@ -18,38 +18,52 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="container-md">
-        <h1 class="mt-5 mb-5 text-center">Tienda Online</h1>
-        <div class="row" id="row">
-            
-            <div class="col-lg-9 d-flex flex-column">
-                <h3 class="mt-5 mb-5 text-center">Productos</h3>
-                <div class="row mb-5 mt-5" id="productos">
-                    <!-- Aquí se cargarán los productos -->
-                </div>
-                
-                
-            </div>
-    
-         
-            <div class="col-lg-3 d-flex flex-column justify-content-between" id="carrito">
-                <h3 class="mt-5 mb-5 text-center">Carrito de Compra</h3>
-                <ul id="listaCarrito" class="list-group mb-3"></ul>
-                <button type="button" class="btn btn-success btn-xs mt-auto">Eliminar carrito</button>
-                <h5 id="precioTotal" class="text-center">Total: 0.00€</h5>
-            </div>
+      <h1 class="mt-5 mb-5 text-center">Tienda Online</h1>
+      <select class="form-select form-select-sm" id="filtrar">
+        <option selected>Filtrar</option>
+        <option value="1">Precio mínimo</option>
+        <option value="2">Precio Maximo</option>
+        <option value="3">Menos de 100€</option>
+        <option value="4">Más de 100€</option>
+        
+      </select><br>
+      <select class="form-select form-select-sm" id="filtrarCategoria">
+        <option selected>Filtrar Categoria</option>
+        <option value="5">Productos de hombre</option>
+        <option value="6">Productos de Mujer</option>
+        <option value="7">Electrónica</option>
+               <option value="8">Joyas</option>
+        
+      </select>
+      <div class="row" id="row">
+        <div class="col-lg-9 d-flex flex-column">
+          <h3 class="mt-5 mb-5 text-center">Productos</h3>
+          <div class="row mb-5 mt-5" id="productos">
+            <!-- Aquí se cargarán los productos -->
+          </div>
         </div>
-    </div>
-    
-    
-    
-      
-      
-      
 
-<script src="./Utils/js/index.js"></script>
-</body>
+        <div
+          class="col-lg-3 d-flex flex-column justify-content-between"
+          id="carrito"
+        >
+          <h3 class="mt-5 mb-5 text-center">Carrito de Compra</h3>
+          <ul id="listaCarrito" class="list-group mb-3"></ul>
+          <button
+            type="button"
+            class="btn btn-success btn-xs mt-auto"
+            id="eliminarCarrito"
+          >
+            Eliminar carrito
+          </button>
+          <h5 id="precioTotal" class="text-center">Total: 0.00€</h5>
+        </div>
+      </div>
+    </div>
+
+    <script src="./Utils/js/index.js"></script>
+  </body>
 </html>
