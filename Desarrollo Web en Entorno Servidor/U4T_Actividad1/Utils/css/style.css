@@ -1,0 +1,27 @@
+#formulario{
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border: solid black 2px;
+max-width: 600px; 
+padding: 20px;
+background-color: rgba(142, 228, 120, 0.295);
+border-radius: 10px; 
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+margin: auto;
+}
+
+body{
+    background-color: beige !important;
+
+
+}
+
+#boton{
+
+    border: solid black;
+    
+}
+
