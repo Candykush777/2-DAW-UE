@@ -175,7 +175,7 @@ eliminarCarritoBtn.addEventListener("click", (e) => {
     // Inicializamos productosFiltrados directamente con usuarios
     let productosFiltrados = usuarios;
   
-    // Obtener precio máximo y mínimo de los productos
+    // Obtener precio máximo y mínimo de los productos, he usado map parece que va bien
     let precioMaximo = Math.max(...usuarios.map((producto) => producto.price));
     let precioMinimo = Math.min(...usuarios.map((producto) => producto.price));
   
