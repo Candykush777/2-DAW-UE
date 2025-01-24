@@ -1,5 +1,2 @@
-Eduardo
-Afán de Rivera
-Navarrina
-683271657
-eduardoafan.eae@gmail.com
+Eduardo|Afan de Rivera|Navarrina|683271657|eduardo@gmail.com
+Roberto|Morales|Rodriguez|683333444|rober@gmail.com
