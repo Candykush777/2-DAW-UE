@@ -1,2 +1,5 @@
 Eduardo|Afan de Rivera|Navarrina|683271657|eduardo@gmail.com
 Roberto|Morales|Rodriguez|683333444|rober@gmail.com
+Alejandra|Martinez|Lopez|677432234|alejandra@gmail.com
+Pedro|Gomez|Almeyda|646961696|pedro@gmail.com
+Miriam|Diaz|Aroca|677899876|miriam@gmail.com

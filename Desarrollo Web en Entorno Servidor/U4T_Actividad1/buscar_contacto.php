@@ -70,7 +70,8 @@ if (isset($_REQUEST['nombreBuscado']) && isset($_REQUEST['apellido1Buscado'])) {
     }
 }
 ?>
-
-<a href="index.php">Volver al Menú Principal</a>
+<div id="abuscar">
+<a  href="index.php">Volver al Menú Principal</a>
+</div>
 </body>
 </html>

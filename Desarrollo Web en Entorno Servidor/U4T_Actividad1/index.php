@@ -14,37 +14,19 @@
 </head>
 <body class="bg-light">
 
-<div class="container mt-5">
+<div class="container mt-5" >
 <h1 class="text-center mb-4 mt-4" id="menuh1">Menu Principal</h1>
 <h3 class="text-center mb-4 mt-4" id="agendah3">Agenda de contactos</h3>
 
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center" id="formulario">
 
 <ul class="list-group">
-<li class="list-group-item text-center"><a href="./guardar_contacto.php" class="text-decoration-none">Registrar Contacto</a></li>
+<li class="list-group-item text-center"><a href="./index.html" class="text-decoration-none">Registrar Contacto</a></li>
 <li class="list-group-item text-center"><a href="./mostrar_contactos.php" class="text-decoration-none">Mostrar todos los Contactos</a></li>
 <li class="list-group-item text-center"><a href="./buscar_contacto.php" class="text-decoration-none">Buscar Contacto</a></li>
-
-
-
-
 </ul>
-
-
 </div>
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-    
+  
 </body>
 </html>
