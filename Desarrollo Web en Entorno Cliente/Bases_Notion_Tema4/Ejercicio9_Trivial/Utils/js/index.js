@@ -76,7 +76,7 @@ function pintarCard(tarjetas) {
   cardBody.appendChild(pregunta);
 
 
-let respuestas=[pregunta.correct_answer,...pregunta.incorrect_answers];
+let respuestas=[pregunta.correct_answer];
 respuestas = respuestas.sort(()=> Math.random()- 0.5)//mirar esto bien
 
 
@@ -106,7 +106,7 @@ button.addEventListener("click", (e)=>{
         
     }
 });
-cardBody(button);
+cardBody.appendChild(button);
 
 
 
