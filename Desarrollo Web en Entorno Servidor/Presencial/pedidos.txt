@@ -2,5 +2,4 @@ Eduardo|Segovia|iPhone: on|5|Roomba: ||Reloj: |
 Jonatan|Guadalajara|iPhone: on|5|Roomba: on|3|Reloj: on|1
 Alfonso|Lugo|iPhone: on|5|Roomba: on|2|Reloj: on|1
 Alex|Madrid|iPhone: ||Roomba: on|5|Reloj: |
-Pedro|Jaen|iPhone: 1|1|Roomba: |1|Reloj: |1
 Mario|Lugo|iPhone: ||Roomba: ||Reloj: on|5
