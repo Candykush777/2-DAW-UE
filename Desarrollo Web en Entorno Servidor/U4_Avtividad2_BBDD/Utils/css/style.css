@@ -1,4 +1,4 @@
-.container{
+.formulario{
 display: flex;
 /* justify-content: center; */
 align-items: center;
@@ -8,8 +8,16 @@ box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 padding: 20px;
 width: 30%;
 
+
 }
 
 form {
     width: 100%;
+}
+
+.listado{
+
+padding: 40px;
+
+
 }

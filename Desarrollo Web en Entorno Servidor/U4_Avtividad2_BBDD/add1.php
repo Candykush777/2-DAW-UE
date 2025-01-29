@@ -16,7 +16,7 @@
 
 <h1 class="text-center mb-5 mt-4">Añadir coche</h1>
 
-<div class="container">
+<div class="container formulario">
 
 <form action="add2.php" method="post">
 
