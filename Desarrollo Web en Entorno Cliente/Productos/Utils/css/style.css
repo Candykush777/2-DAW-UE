@@ -1,0 +1,191 @@
+
+/* se han usado las clases y maneras de boottrap para poder hacer 
+
+editable sus clases, viene en su pagina para copiarlo  */
+
+
+:root {
+    --form-select-border-color: #800080; 
+    --form-select-border-radius: 1rem; 
+    --form-select-focus-border-color: #6a0dad; 
+    --form-select-focus-box-shadow: 0 0 0 0.25rem rgba(138, 43, 226, 0.5); 
+    --form-select-border-width: solid var(--form-select-border-color);
+     
+    --form-select-box-shadow: 0 0 5px rgba(138, 43, 226, 0.7);
+  }
+  
+  .form-select {
+    padding: var(--form-select-padding-y) var(--form-select-padding-x);
+    font-family: var(--form-select-font-family);
+    font-size: var(--form-select-font-size);
+    font-weight: var(--form-select-font-weight);
+    line-height: var(--form-select-line-height);
+    color: var(--form-select-color);
+    background-color: var(--form-select-bg);
+    border-radius: var(--form-select-border-radius);
+    border: var(--form-select-border-width) solid var(--form-select-border-color);
+    box-shadow: var(--form-select-box-shadow); 
+    width: 80%; 
+    height: 120%;
+    appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none; 
+  }
+  
+  .form-select:focus {
+    border-color: var(--form-select-focus-border-color);
+    box-shadow: var(--form-select-focus-box-shadow); 
+  }
+  
+  /* Estilo de la flecha */
+.form-select::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--form-select-indicator-color);
+  }
+  
+  .form-select-container {
+    position: relative; 
+  }
+
+  h1{
+
+color: #6a0dad;
+font-style: italic;
+font-weight: bold;
+text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), 0 0 25px rgba(138, 43, 226, 0.5);
+text-align: center;
+
+  }
+  .container {
+    background-color: rgba(240, 232, 243, 0.527); 
+    border-radius: 10px; 
+    padding: 10px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    max-width: 1200px; 
+    margin: 20px auto; 
+    transition: all 0.3s ease-in-out; 
+  }
+  .option:hover {
+    background-color: #931797 !important; 
+    
+  }
+
+
+
+
+ 
+
+ .btn{
+    color: rgb(250, 248, 248);
+
+    font-weight: bold;
+    font-size: 20px;
+
+
+ }
+
+ .boton{
+text-align: center;
+background-color: #6206a3;
+border-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 30%;
+margin-top: 20px;
+
+ }
+
+ .form-select {
+    pointer-events: auto;
+  }
+  .btn-agregar{
+
+font-size: 12px;
+width: 100%;
+border-radius: 5px;
+background-color: #5ddb728e;
+font-weight: bold;
+padding: 5px;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+  }
+
+  .carrito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+
+  }
+
+  
+
+.precioTotalContainer {
+  width: 60%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.btn-comprar {
+  background-color: #5ddb728e;
+  color: rgb(7, 7, 7);
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 60%; 
+  border: solid black 2px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px; 
+}
+
+
+#productosCarrito {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+}
+
+
+.producto-carrito {
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%; 
+  max-width: 400px; 
+}
+
+.producto-carrito img {
+  max-height: 70px;
+  border-radius: 5px;
+}
+
+.producto-carrito h6 {
+  margin-bottom: 5px;
+}
+
+.producto-carrito .precio {
+  color: red;
+  font-weight: bold;
+}
+
+

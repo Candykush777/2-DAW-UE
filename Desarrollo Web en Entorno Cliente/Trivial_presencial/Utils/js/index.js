@@ -2,6 +2,9 @@ let divContainer = document.querySelector("#tapete");
 
 let preguntas = [];
 
+
+let dire="Trivial_presencial\index.html"
+
 let puntosJugador1 = 0;
 
 let uRl =
@@ -16,54 +19,53 @@ let winnerFinalSound = new Audio('winnerFinal.ogg');
 async function cargarTrivial() {
   try {
     let response = await fetch(uRl);
-
     let json = await response.json();
-
     preguntas = json.results;
 
-    console.log(preguntas);
+    console.log(`Respuesta correcta de la API ${preguntas}`);
 
-    Swal.fire({
+      
+
+   /*  Quitamos esto xq no es profesional que salga en publico la respuesta de la api 
+   Swal.fire({
       title: "Cargando datos....",
       text: "Respuesta correcta de la API",
       icon: "success",
-    });
-    // Añadimos el div de puntos una vez fuera del ciclo sino me borra los puntos al estar dentro de la li
+    }); */
 
     setTimeout(() => {
+      // Mostrar la puntuación inicial después de 5 segundos
       let divPuntos = document.createElement("div");
       divPuntos.classList.add("puntos");
-      divPuntos.innerHTML = `<h3>Jugador 1: <span id="puntosJugador1">${puntosJugador1}</span> Puntos</h3>`;
+      divPuntos.innerHTML = `<h2><span id="puntosJugador1">${puntosJugador1}</span> Puntos</h2>`;
       divContainer.prepend(divPuntos);
-      /* append pone los puntos al final del DOM , 
-     con prepend conseguimos que aparezca al principio, creo queda mejor
-   */
     }, 5000);
-
-    /*  preguntas.forEach((tarjetas) => {
-      pintarCard(tarjetas);
-    }); */
+    
     setTimeout(() => {
-      let numPreguntas = preguntas.length;//para detectar la ultima y poner el sonido final winner
+      let numPreguntas = preguntas.length;
       for (let i = 0; i < numPreguntas; i++) {
         setTimeout(() => {
-          limpiarPreguntas(); 
-          pintarCard(preguntas[i]);
-
-          // Si es la última pregunta, reproducir sonido final
+          limpiarPreguntas();  
+          pintarCard(preguntas[i]);  
+    
           if (i === numPreguntas - 1) {
             setTimeout(() => {
-              winnerFinalSound.play(); 
-              /* Swal.fire({ lo he quitado xq prefiero mostrar el div de lospuntos que un sweetalert
-                title: "¡Juego terminado!",
-                text: `Tu puntuación final es ${puntosJugador1} puntos.`,
-                icon: "info",
-              }); */
-            }, 1000); // Retraso para escuchar el sonido y luego mostrar el resultado final
+              winnerFinalSound.play();  // Reproducir sonido de ganador cuando termine la última pregunta
+              let puntosDinamicos = document.querySelector(".puntos");
+              if (puntosDinamicos) {
+                puntosDinamicos.remove();  // Eliminar puntos dinámicos
+              }
+             
+              setTimeout(() => {
+                limpiarPreguntas();  // Elimina todas las tarjetas
+                mostrarPuntajeFinal();  // Muestra el puntaje final
+              }, 1000); 
+            }, 11000);  // Espera 11 segundos antes de reproducir el sonido final
           }
-        }, i * 10000); // Muestra una tarjeta cada 10 segundos
+        }, i * 10000);  // Mostrar cada pregunta con un intervalo de 10 segundos
       }
-    }, 5000); // Retraso de 5 segundos para la primera tarjeta y asi salga perfecto el sonido
+    }, 5000);
+
   } catch (error) {
     console.error("Error al cargar los datos", error);
     Swal.fire({
@@ -74,6 +76,7 @@ async function cargarTrivial() {
   }
 }
 
+// Función para pintar una tarjeta con la pregunta y respuestas
 function pintarCard(tarjetas) {
   let columna = document.createElement("div");
   columna.classList.add(
@@ -94,41 +97,36 @@ function pintarCard(tarjetas) {
     "card-text",
     "text-center",
     "custom-font",
-    "text-success"
+     "letra"
   );
   categoria.innerHTML = ` ${tarjetas.category}`;
 
   let pregunta = document.createElement("h5");
-  pregunta.classList.add("card-text", "text-center", "mb-4");
-  pregunta.innerHTML = `<b>Pregunta:</b>: ${tarjetas.question}`;
+  pregunta.classList.add("card-text", "text-center", "mb-4", "pregunta");
+  pregunta.innerHTML = `${tarjetas.question}`;
 
-  //vamos a usar _.shuffle() de Underscore
-
+  // Creamos las respuestas
   let listaRespuestas = document.createElement("ul");
   listaRespuestas.classList.add("list-group", "list-group-flush");
 
   let respuestas = tarjetas.incorrect_answers.concat(tarjetas.correct_answer);
   respuestas = _.shuffle(respuestas);
 
-  /* divContainer.innerHTML = ""; */
-
-  //Creamos el div contenedor para los puntos
-
+  // Creamos las respuestas en la lista
   respuestas.forEach((respuesta) => {
     let liRespuesta = document.createElement("li");
     liRespuesta.classList.add("list-group-item", "text-center");
 
     liRespuesta.innerText = respuesta;
-    liRespuesta.style.borderRadius = "10px";
-    /* El border-radius no funcionaba en css, solo me ha hehco caso poniendolo aquí, 
-  las respuestas 1 y 4 en la parte exterior no hacia le border radius */
+    liRespuesta.style.borderRadius = "10px";  // Aplica border-radius aquí, xq no era capaz, 
+    // se quedaban la 1a y 4a por el borde externo sin radius
 
     // Respuestas correctas e incorrectas
     liRespuesta.addEventListener("click", () => {
       if (respuesta === tarjetas.correct_answer) {
         Swal.fire({
           title: "¡Correcto!",
-          text: "Has seleccionado la respuesta correcta, sumas 10 punto.",
+          text: "Has seleccionado la respuesta correcta, sumas 10 puntos.",
           icon: "success",
         });
         correctSound.play();
@@ -143,34 +141,52 @@ function pintarCard(tarjetas) {
         });
         incorrectSound.play();
       }
-      listaRespuestas.innerHTML = "";
+      listaRespuestas.innerHTML = "";  // Limpiar las respuestas 
     });
 
     listaRespuestas.append(liRespuesta);
   });
 
+  // Agregar todo a la tarjeta
   cardBody.append(categoria);
   cardBody.append(pregunta);
   cardBody.append(listaRespuestas);
 
   card.append(cardBody);
-
   columna.append(card);
 
-  divContainer.append(columna);
+  divContainer.append(columna);  // Agregar la columna con la nueva tarjeta
 }
-//Actualizamos los puntos
+
+
+function limpiarPreguntas() {
+  
+  let tarjetas = divContainer.querySelectorAll(".col-12");  // Seleccionamos las columnas
+  tarjetas.forEach((tarjeta) => {
+    tarjeta.remove();  // Eliminamos la columna completa que contiene la card
+  });
+}
+
 
 function actualizarPuntos() {
   let puntuacionJugador1 = document.getElementById("puntosJugador1");
 
   puntuacionJugador1.innerText = puntosJugador1;
 }
-
-function limpiarPreguntas() {
-  // Limpiar solo las tarjetas de preguntas
-  let tarjetas = divContainer.querySelectorAll(".card");
-  tarjetas.forEach((tarjeta) => tarjeta.remove());
+function mostrarPuntajeFinal() {
+  let divPuntosFinales = document.createElement("div");
+  divPuntosFinales.classList.add("puntos-finales", "animate__animated", "animate__fadeInDown");
+  divPuntosFinales.innerHTML = `
+    <div class="puntaje-container">
+      <h1><span id="puntosJugador1">${puntosJugador1}</span> Puntos Finales</h1>
+    </div>
+    <div class="volver-container">
+      <a href="#" onclick="recargarPagina()">Volver a Jugar</a>
+    </div>
+  `;
+  divContainer.prepend(divPuntosFinales);
 }
-
+function recargarPagina() {
+  location.reload();  // Recarga la página actual
+}
 cargarTrivial();
