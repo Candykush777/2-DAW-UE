@@ -46,3 +46,12 @@ border-radius: 10px;
     background: radial-gradient(circle, #64630b, #c5b80400) !important;
 }
   
+.tooltip-text {
+    background-color: rgb(255, 254, 254); /* Gris semi-transparente */
+    color: white;
+    font-size: 16px;
+    max-width: 200px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
