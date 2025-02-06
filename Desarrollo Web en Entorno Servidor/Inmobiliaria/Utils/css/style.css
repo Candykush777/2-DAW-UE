@@ -45,13 +45,42 @@ border-radius: 10px;
 .bg-black-custom2 {
     background: radial-gradient(circle, #64630b, #c5b80400) !important;
 }
+
+.formulario{
+
+border: solid rgb(255, 255, 255) 3px;
+
+background-color: rgb(248, 250, 250);
+padding: 10px;
+border-radius: 10px;
+width: 35%;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: absolute; /* Usamos absolute para posicionarlo */
+top: 50%; /* Posiciona el formulario en el centro vertical */
+left: 50%; /* Posiciona el formulario en el centro horizontal */
+transform: translate(-50%, -50%); /* Ajusta el formulario para que esté exactamente en el centro */
+transition: transform 0.3s ease;
+/* normlamente pondria flex enel body pero com quiero usar
+ el mismo style he tendido que poner position etc */
+
   
-.tooltip-text {
-    background-color: rgb(255, 254, 254); /* Gris semi-transparente */
-    color: white;
-    font-size: 16px;
-    max-width: 200px;
-    text-align: center;
-    border-radius: 25px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  }
+}
+.formulario:hover {
+    transform: translate(-50%, -50%) scale(1.05); /* Se mueve un poco hacia arriba y agranda ligeramente */
+    box-shadow: 0 10px 20px rgba(248, 247, 247, 0.2); /* Agrega un efecto de sombra para resaltar el movimiento */
+}
+
+.form{
+    font-weight: bold;
+padding: 10px;
+    width: 100%;
+}
+label {
+    margin-bottom: 8px; /* Espacio de 8px debajo de la etiqueta */
+}
+
+input {
+    margin-bottom: 15px; /* Espacio de 15px debajo del input */
+}

@@ -19,7 +19,7 @@
 
 <?php 
 
-$conexion = mysqli_connect('localhost','root','','concesionario');
+$conexion = mysqli_connect('localhost','root','Viewsonic1981','concesionario');
 
 if (!$conexion) {
 
