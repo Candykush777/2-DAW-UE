@@ -1,0 +1,49 @@
+/* Estilo del header */
+.titulo {
+    margin-bottom: 0; /* Elimina espacio entre el h1 y la nav */
+}
+
+.tituloh1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 40px;
+    font-style: italic; /* Letra en cursiva */
+     background-color: rgb(139, 132, 27); 
+    margin: 0;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+/* Estilo del footer */
+.footer {
+    
+    text-align: center;
+}
+
+img{
+
+border-radius: 10px;
+
+
+
+}
+
+.tooltip-text {
+    background-color: rgb(255, 254, 254); /* Gris semi-transparente */
+    color: white;
+    font-size: 16px;
+    max-width: 200px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .bg-black-custom {
+    background: linear-gradient(to bottom, #1f0b38, #000000) !important; /* Rojo a negro */
+}
+.bg-black-custom2 {
+    background: radial-gradient(circle, #64630b, #c5b80400) !important;
+}
+  
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #recetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h2 {
+            font-size: 1.5rem;
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recetas Aleatorias</h1>
+    <button onclick="cargarRecetas()">Obtener Recetas</button>
+    <div id="recetas"></div>
+
+    <script>
+        async function cargarRecetas() {
+            const apiKey = "ea28642791554ca1adb3c431e6632562"; //  Spoonacular
+            const url = `https://api.spoonacular.com/recipes/random?number=20&apiKey=${apiKey}`;
+            
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error("Error en la solicitud");
+                
+                const data = await response.json();
+                mostrarRecetas(data.recipes);
+                console.log(data);
+                
+            } catch (error) {
+                console.error("Error obteniendo recetas:", error);
+            }
+        }
+
+        function mostrarRecetas(recipes) {
+            const contenedor = document.getElementById("recetas");
+            contenedor.innerHTML = ""; // Limpiar antes de agregar nuevas recetas
+
+            recipes.forEach(receta => {
+                const recetaHTML = `
+                    <div class="card">
+                        <img src="${receta.image}" alt="${receta.title}">
+                        <div class="card-content">
+                            <h2>${receta.title}</h2>
+                            <p><strong>Instrucciones:</strong> ${receta.instructions || "No disponibles"}</p>
+                        </div>
+                    </div>
+                `;
+                contenedor.innerHTML += recetaHTML;
+            });
+        }
+    </script>
+</body>
+</html>
