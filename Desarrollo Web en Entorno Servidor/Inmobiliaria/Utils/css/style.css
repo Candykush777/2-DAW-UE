@@ -183,5 +183,48 @@ border-radius: 10px;
 }
 
 
+.pintaPiso{
+
+
+border: solid black 2px;
+background-color: white;
+width: 30%;
+border-radius: 10px;
+
+text-align: center;
+box-shadow: 0 8px 15px rgba(0,0,0,0.8);
+
+
+}
+
+.dire {
+    margin: 0; /* Elimina el margen externo */
+    padding: 0; /* Elimina el relleno interno */
+    line-height: 1.2; /* Ajusta la altura de la línea para reducir el espacio entre líneas */
+}
+
+.dire p {
+    margin: 5px 0; /* Ajusta el margen superior e inferior de los párrafos */
+}
+
+bodybody {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+buscarPisoDiv {
+    flex-grow: 1;
+    padding: 20px; /* Ajusta el padding según sea necesario */
+}
+
+footerBuscar {
+    text-align: center;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+    background-color: #000; /* Ajusta el color de fondo según sea necesario */
+    color: #fff; /* Ajusta el color del texto según sea necesario */
+    padding: 10px 0; /* Ajusta el padding según sea necesario */
+}
 
 
