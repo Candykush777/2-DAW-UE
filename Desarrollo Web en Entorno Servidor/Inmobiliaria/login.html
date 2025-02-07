@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de Registro</title>
+    <title>Inicio de Sesión</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -27,31 +27,8 @@
         Quality Inmobiliaria
       </h1>
       <div class="form-group formulario">
-        <form class="form" action="registro.php" method="post">
-          <label for="nombre" class="form-label">Nombre: </label>
-          <input
-            type="text"
-            class="form-control"
-            name="nombre"
-            placeholder="Introduce tu nombre"
-            required
-          />
-          <label for="nombre" class="form-label">Primer Apellido: </label>
-          <input
-            type="text"
-            class="form-control"
-            name="apellido1"
-            placeholder="Introduce tu Primer Apellido"
-            required
-          />
-          <label for="nombre" class="form-label">Segundo Apellido: </label>
-          <input
-            type="text"
-            class="form-control"
-            name="apellido2"
-            placeholder="Introduce tu Segundo Apellido"
-          />
-          <label for="nombre" class="form-label">Correo Electrónico: </label>
+        <form class="form" action="login.php" method="post">
+          <label for="correo" class="form-label">Correo electrónico: </label>
           <input
             type="email"
             class="form-control"
@@ -67,9 +44,10 @@
             placeholder="Introduce tu Contraseña"
             required
           />
+        
           <div class="boton">
             <button type="submit" class="btn btn-success btn-lg">
-              Registrar
+              Iniciar Sesión
             </button>
           </div>
         </form>
