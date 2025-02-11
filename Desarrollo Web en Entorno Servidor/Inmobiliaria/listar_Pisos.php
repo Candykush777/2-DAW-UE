@@ -53,15 +53,7 @@ echo '<div class="alert alert-success", role="alert">Los datos se han mostrado c
 }
 
 
-
-
-
-
-
-
-
-
-
+mysqli_close($conexion);
 
 
 

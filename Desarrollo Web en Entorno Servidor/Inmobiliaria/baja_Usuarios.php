@@ -1,3 +1,11 @@
+<?php
+session_start();
+/* var_dump($_SESSION);  está muy bien para verificar si hay algun problema y no te coge una variable*/
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,48 +59,41 @@
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="">Contacto</a>
               </li>
+            
               <li class="nav-item">
-                <a
-                  class="nav-link text-white fs-4"
-                  href="formulario_registro.html"
-                  >Registro</a
+                <a class="nav-link text-white fs-4" href="logout.php"
+                  >Cerrar Sesión</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="login.html"
-                  >Cerrar Sesión</a
-                >
+              <div class="container sesion">
+              <h5>Sesión iniciada, <?php echo $_SESSION['nombre']; ?>!</h5>
+              <p style="color: crimson;"><?php echo $_SESSION['email']; ?></p>  <!-- Aquí lo mostramos -->
+              <p>ID de usuario: <?php echo $_SESSION['usuario_id']; ?></p>
+              </div>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </div>
-    <!-- Fin del contenedor del header -->
 
-    <!-- Contenido principal -->
-    <div class="container usuariosContainer mb-3 mt-3">
-      <div class="row1 mb-3 mt-3">
-        <div class="col mb-3 mt-3">
-         <h1>Compra Inmuebles</h1>
-        </div>
-        <div class="col mb-3 mt-3 ">
-          <h1>
-            Listar Inmuebles
-          </h1>
-        </div>
-      </div>
-      <div class="row1 mb-3 mt-3">
-        <div class="col mb-3 mt-3">
-         <h1> Buscar Inmuebles
 
-         </h1>
-        </div>
-        <div class="col mb-3 mt-3">
-          <h1>Alta Inmuebles</h1>
-        </div>
-      </div>
-    </div>
+   <div class="container formBorrado">
+
+<form >
+
+<label for="buscarID" class="form-label"><h3>Introduce el ID para el borrado del Usuario</h3></label>
+<input type="number" class="form-control w-50" name="id" placeholder="Introduce el ID" required>
+
+<div class="boton">
+<button type="button" class="btn btn-danger w-50">Borrar</button>
+
+</div>
+
+</form>
+
+   </div>
 
     <!-- Footer -->
     <footer class="footer text-white py-3 mt-auto">

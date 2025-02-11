@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,7 +48,14 @@
                 <a class="nav-link text-white fs-4" href="formulario_registro.html">Registro</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="login.html">Cerrar Sesión</a>
+                <a class="nav-link text-white fs-4" href="logout.php">Cerrar Sesión</a>
+              </li>
+              <li class="nav-item">
+              <div class="container sesion">
+              <h5>Sesión iniciada, <?php echo $_SESSION['nombre']; ?>!</h5>
+              <p style="color: crimson;"><?php echo $_SESSION['email']; ?></p>  <!-- Aquí lo mostramos -->
+              <p>ID de usuario: <?php echo $_SESSION['usuario_id']; ?></p>
+              </div>
               </li>
             </ul>
           </div>

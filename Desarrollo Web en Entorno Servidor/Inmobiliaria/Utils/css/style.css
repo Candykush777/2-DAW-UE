@@ -19,18 +19,12 @@
 
 /* Estilo del footer */
 .footer {
-
-    
-
     text-align: center;
 }
 
 img {
 
     border-radius: 10px;
-
-
-
 }
 
 .tooltip-text {
@@ -54,9 +48,7 @@ img {
 }
 
 .formulario {
-
     border: solid rgb(255, 255, 255) 3px;
-
     background-color: rgb(248, 250, 250);
     padding: 10px;
     border-radius: 10px;
@@ -75,8 +67,6 @@ img {
     transition: transform 0.3s ease;
     /* normlamente pondria flex enel body pero com quiero usar
  el mismo style he tendido que poner position etc */
-
-
 }
 
 .formulario:hover {
@@ -95,60 +85,85 @@ img {
 
 label {
     margin-bottom: 8px;
- 
+
 }
 
 input {
     margin-bottom: 15px;
- 
+
 }
 
 .boton {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
+
 }
 
-.btn{
+.btn {
 
     width: 80%;
 }
-.col{
+
+.col {
     text-align: center;
-    border: solid black 5px ;
+    border: solid black 5px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 70%;
+    min-height: 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.col1{
+    text-align: center;
+    border: solid black 5px;
     background-color: white;
     border-radius: 10px;
     padding: 50px;
-    width: 80% ;
+    width: 80%;
     min-height: 100px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    transition: transform 0.3s, 
-    box-shadow 0.3s;
-    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s,
+        box-shadow 0.3s;
+
 }
+
+.row1 a {
+    display: block;
+    width: 100%;
+}
+
+
+
+
 .row1 {
     display: flex;
-    gap: 20px; /* Separa las columnas (las cards) dentro de la misma fila */
-  }
+    gap: 20px;
+    /* Separa las columnas (las cards) dentro de la misma fila */
+}
 
 .col:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
-.usuariosContainer{
 
-display: flex;
-flex-direction: column;
-
+.usuariosContainer {
+    display: flex;
+    flex-direction: row;
 
 
 }
+
+
+
 .formulario1 {
     border: solid rgb(255, 255, 255) 3px;
     background-color: rgb(248, 250, 250);
-    
+
     border-radius: 10px;
     width: 60%;
     display: flex;
@@ -163,48 +178,48 @@ flex-direction: column;
 
 /* Efecto al pasar el mouse */
 .formulario1:hover {
-    transform: translate(-50%, -50%) scale(1.05); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
-
 
 .formulario1 input {
-    width: 260px;  /* Ajusta el ancho */
-    height: 30px; /* Ajusta la altura */
-    font-size: 12px; /* Tamaño del texto dentro del input */
-     /* Reduce el espacio interno */
+    width: 260px;
+    /* Ajusta el ancho */
+    height: 30px;
+    /* Ajusta la altura */
+    font-size: 12px;
+    /* Tamaño del texto dentro del input */
+    /* Reduce el espacio interno */
 }
 
-.table{
-
-border-radius: 10px;
-
-
+.table {
+    border-radius: 10px;
 }
 
+.pintaPiso {
 
-.pintaPiso{
+    border: solid black 2px;
+    background-color: white;
+    width: 30%;
+    border-radius: 10px;
 
-
-border: solid black 2px;
-background-color: white;
-width: 30%;
-border-radius: 10px;
-
-text-align: center;
-box-shadow: 0 8px 15px rgba(0,0,0,0.8);
-
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
 
 }
 
 .dire {
-    margin: 0; /* Elimina el margen externo */
-    padding: 0; /* Elimina el relleno interno */
-    line-height: 1.2; /* Ajusta la altura de la línea para reducir el espacio entre líneas */
+    margin: 0;
+    /* Elimina el margen externo */
+    padding: 0;
+    /* Elimina el relleno interno */
+    line-height: 1.2;
+    /* Ajusta la altura de la línea para reducir el espacio entre líneas */
 }
 
 .dire p {
-    margin: 5px 0; /* Ajusta el margen superior e inferior de los párrafos */
+    margin: 5px 0;
+    /* Ajusta el margen superior e inferior de los párrafos */
 }
 
 bodybody {
@@ -216,15 +231,48 @@ bodybody {
 
 buscarPisoDiv {
     flex-grow: 1;
-    padding: 20px; /* Ajusta el padding según sea necesario */
+    padding: 20px;
+    /* Ajusta el padding según sea necesario */
 }
 
 footerBuscar {
     text-align: center;
-    margin-top: auto; /* Empuja el footer hacia abajo */
-    background-color: #000; /* Ajusta el color de fondo según sea necesario */
-    color: #fff; /* Ajusta el color del texto según sea necesario */
-    padding: 10px 0; /* Ajusta el padding según sea necesario */
+    margin-top: auto;
+    /* Empuja el footer hacia abajo */
+    background-color: #000;
+    /* Ajusta el color de fondo según sea necesario */
+    color: #fff;
+    /* Ajusta el color del texto según sea necesario */
+    padding: 10px 0;
+    /* Ajusta el padding según sea necesario */
 }
 
 
+.sesion{
+
+    border:solid rgb(7, 7, 7) 2px;
+    border-radius: 5px;
+    background-color: aliceblue;
+    padding: 2%;
+    width: 105%;
+    
+
+}
+.sesion p {
+    margin-bottom: 10px;  /* Reducir el margen entre las filas de texto */
+    word-wrap: break-word;  /* Permitir que el texto largo del email se ajuste automáticamente */
+}
+
+.formBorrado{
+    margin-top: 10%;
+display: flex;
+align-items: center;
+justify-content: center;
+border: solid black 3px;
+border-radius: 15px;
+padding: 2%;
+background-color: aliceblue;
+width: 70%;
+
+
+}

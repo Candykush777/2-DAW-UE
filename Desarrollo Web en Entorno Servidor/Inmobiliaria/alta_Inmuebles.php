@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -52,7 +59,7 @@
                 <a class="nav-link text-white fs-4" href="formulario_registro.html">Volver Atrás</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="login.html">Cerrar Sesión</a>
+                <a class="nav-link text-white fs-4" href="logout.php">Cerrar Sesión</a>
               </li>
             </ul>
           </div>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+/* var_dump($_SESSION);  está muy bien para verificar si hay algun problema y no te coge una variable*/
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.html");
     exit();
@@ -10,28 +11,25 @@ if (!isset($_SESSION['usuario_id'])) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Listado Inmuebles</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link rel="icon" type="image/png" href="logoG.jpeg" sizes="32x32">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
-    />
     <link rel="stylesheet" href="/Inmobiliaria/Utils/css/style.css" />
+    <title>Quality Inmobiliaria</title>
   </head>
   <body
-    class="bg-black bg-gradient bg-black-custom bodybody d-flex flex-column min-vh-100 p-3"
+    class="bg-black bg-gradient bg-black-custom d-flex flex-column min-vh-100 p-3"
   >
     <!-- Header con barra de navegación -->
-    <div class="container buscarPisoDiv">
+    <div class="container">
       <h1
         class="tituloh1 bg-black bg-gradient bg-black-custom2 text-center p-3"
       >
@@ -59,7 +57,7 @@ if (!isset($_SESSION['usuario_id'])) {
                 <a class="nav-link text-white fs-4" href="index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="#">Contacto</a>
+                <a class="nav-link text-white fs-4" href="">Contacto</a>
               </li>
               <li class="nav-item">
                 <a
@@ -69,47 +67,96 @@ if (!isset($_SESSION['usuario_id'])) {
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="login.html"
+                <a class="nav-link text-white fs-4" href="logout.php"
                   >Cerrar Sesión</a
                 >
+              </li>
+              <li class="nav-item">
+              <div class="container sesion">
+              <h5>Sesión iniciada, <?php echo $_SESSION['nombre']; ?>!</h5>
+              <p style="color: crimson;"><?php echo $_SESSION['email']; ?></p>  <!-- Aquí lo mostramos -->
+              <p>ID de usuario: <?php echo $_SESSION['usuario_id']; ?></p>
+              </div>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <div class="container listado mt-4">
-      <form method="GET" action="buscar_inmueble.php">
-            <div class="row">
-                <!-- Filtro por Metros -->
-                <div class="col-md-6 mb-3">
-                    <select class="form-select" name="filtro_metros">
-                        <option value="">Todos los metros...</option>
-                        <option value="menos_100" <?php if(isset($_GET['filtro_metros']) && $_GET['filtro_metros'] == 'menos_100') echo 'selected'; ?>>Menos de 100m²</option>
-                        <option value="100-170" <?php if(isset($_GET['filtro_metros']) && $_GET['filtro_metros'] == '100-120') echo 'selected'; ?>>100m² - 170m²</option>
-                        <option value="mas_170" <?php if(isset($_GET['filtro_metros']) && $_GET['filtro_metros'] == 'mas_120') echo 'selected'; ?>>Más de 170m²</option>
-                    </select>
-                </div>
-
-                <!-- Filtro por Zona -->
-                <div class="col-md-6 mb-3">
-                    <select class="form-select" name="filtro_zona">
-                        <option value="">Todas las zonas...</option>
-                        <option value="Noroeste" <?php if(isset($_GET['filtro_zona']) && $_GET['filtro_zona'] == 'Noroeste') echo 'selected'; ?>>Zona Noroeste</option>
-                        <option value="Norte" <?php if(isset($_GET['filtro_zona']) && $_GET['filtro_zona'] == 'Norte') echo 'selected'; ?>>Zona Norte</option>
-                        <option value="Sur" <?php if(isset($_GET['filtro_zona']) && $_GET['filtro_zona'] == 'Sur') echo 'selected'; ?>>Zona Sur</option>
-                    </select>
-                </div>
-
-                <!-- Botón de Filtro -->
-                <div class="col-md-12 mb-4">
-                    <button type="submit" class="btn btn-primary">Filtrar</button>
-                    <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="btn btn-secondary">Limpiar Filtros</a>
-                </div>
-            </div>
-        </form>
     </div>
+
+
+    <!-- Fin del contenedor del header -->
+
+    <!-- Contenido principal -->
+    <div class="container usuariosContainer mb-3 mt-3">
+      <div class="col-6  mb-3 mt-3">
+        <div class="row1 col mb-3 mt-3">
+
+        <a href="compra.php" style="text-decoration: none; color: inherit;">
+         <h1 class="text-center">Alta Usuarios</h1>
+         </a>
+        </div>
+        <div class="row1 col mb-3 mt-3 ">
+          <a href="listar_Inmuebles.php" style="text-decoration: none; color: inherit;">
+          <h1 class="text-center">
+            Baja Usuarios
+          </h1>
+          </a>
+        </div>
+        <div class="row1 col mb-3 mt-3">
+          <a href="buscar_pisos.php" style="text-decoration: none; color: inherit;">
+         <h1> Buscar Usuarios
+
+         </h1>
+          </a>
+        </div>
+        <div class="row1 col mb-3 mt-3">
+          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
+          <h1>Modificar Usuarios</h1>
+          </a>
+        </div>
+        <div class="row1 col mb-3 mt-3">
+          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
+          <h1>Listar Usuarios</h1>
+          </a>
+        </div>
+      </div>
+      <div class="col-6  mb-3 mt-3">
+        <div class="row1 col mb-3 mt-3">
+          <a href="buscar_pisos.php" style="text-decoration: none; color: inherit;">
+         <h1> Alta Inmuebles
+
+         </h1>
+          </a>
+        </div>
+        <div class="row1 col mb-3 mt-3">
+          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
+          <h1>Baja Inmuebles</h1>
+          </a>
+        </div>
+        <div class="row1 col mb-3 mt-3">
+          <a href="buscar_pisos.php" style="text-decoration: none; color: inherit;">
+         <h1> Buscar Inmuebles
+
+         </h1>
+          </a>
+        </div>
+        <div class="row1 col mb-3 mt-3">
+          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
+          <h1>Modificar Inmuebles</h1>
+          </a>
+        </div>
+        <div class="row1 col mb-3 mt-3">
+          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
+          <h1>Listar pisos</h1>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+
     <!-- Footer -->
-    <footer class="footerBuscar text-white py-3 mt-auto">
+    <footer class="footer text-white py-3 mt-auto">
       <div class="container text-center">
         <div class="row">
           <!-- Sección de contacto -->
@@ -134,7 +181,7 @@ if (!isset($_SESSION['usuario_id'])) {
         </div>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
