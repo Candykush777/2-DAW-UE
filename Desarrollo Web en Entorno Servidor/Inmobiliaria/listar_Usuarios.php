@@ -1,36 +1,46 @@
-
 <?php
 session_start();
-/* var_dump($_SESSION);  está muy bien para verificar si hay algun problema y no te coge una variable*/
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.html");
     exit();
 }
+?>
+<?php 
+include 'conexion.php';
+
+$sql="SELECT usuario_id, nombres, apellido1, apellido2, correo,tipo_usuario  FROM usuario";
+$result=mysqli_query($conexion, $sql);
+$usuario=mysqli_fetch_assoc($result);
+mysqli_close($conexion);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado Usuarios</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="icon" type="image/png" href="logoG.jpeg" sizes="32x32">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
     <link rel="stylesheet" href="/Inmobiliaria/Utils/css/style.css" />
-    <title>Quality Inmobiliaria</title>
   </head>
   <body
-    class="bg-black bg-gradient bg-black-custom d-flex flex-column min-vh-100 p-3"
+    class="bg-black bodyAll bg-gradient bg-black-custom bodybody d-flex flex-column min-vh-100 p-3"
   >
     <!-- Header con barra de navegación -->
-    <div class="container">
+    <div class="container buscarPisoDiv">
       <h1
         class="tituloh1 bg-black bg-gradient bg-black-custom2 text-center p-3"
       >
@@ -58,15 +68,9 @@ if (!isset($_SESSION['usuario_id'])) {
                 <a class="nav-link text-white fs-4" href="index.php">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="">Contacto</a>
+                <a class="nav-link text-white fs-4" href="#">Contacto</a>
               </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link text-white fs-4"
-                  href="formulario_registro.html"
-                  >Registro</a
-                >
-              </li>
+             
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="logout.php"
                   >Cerrar Sesión</a
@@ -83,47 +87,29 @@ if (!isset($_SESSION['usuario_id'])) {
           </div>
         </div>
       </nav>
+      <main class="mainContent container mt-4">
+        <div class="card bg-dark text-white">
+            <div class="card-body">
+                <?php if ($usuario) { ?>
+                    <h3 class="text-center mb-4">Listado Usuarios</h3>
+                    <table class="table table-dark table-striped">
+                        <tr><th>ID:</th><td><?php echo $usuario['usuario_id']; ?></td></tr>
+                        <tr><th>Nombre:</th><td><?php echo $usuario['nombres']; ?></td></tr>
+                        <tr><th>Primer Apellido:</th><td><?php echo $usuario['apellido1']; ?></td></tr>
+                        <tr><th>Segundo Apellido:</th><td><?php echo $usuario['apellido2']; ?></td></tr>
+                        <tr><th>Email:</th><td><?php echo $usuario['correo']; ?></td></tr>
+                        <tr><th>Tipo de Usuario:</th><td><?php echo $usuario['tipo_usuario']; ?></td></tr>
+                    </table>
+                <?php } else { ?>
+                    <div class="alert alert-warning text-center">No se encontró ningún usuario con ese ID</div>
+                <?php } ?>
+            </div>
+        </div>
+    </main>
+        </form>
     </div>
-
-
-    <!-- Fin del contenedor del header -->
-
-    <!-- Contenido principal -->
-    <div class="container usersContainer mb-3 mt-3">
-      <div class="row1 mb-3 mt-3">
-        <div class="col col1 mb-3 mt-3">
-
-        <a href="compra.php" style="text-decoration: none; color: inherit;">
-         <h1>Compra Inmuebles</h1>
-         </a>
-        </div>
-        <div class="col col1 mb-3 mt-3 ">
-          <a href="listar_Inmuebles.php" style="text-decoration: none; color: inherit;">
-          <h1>
-            Listar Inmuebles
-          </h1>
-          </a>
-        </div>
-      </div>
-      <div class="row1 mb-3 mt-3">
-        <div class="col col1 mb-3 mt-3">
-          <a href="buscar_pisos.php" style="text-decoration: none; color: inherit;">
-         <h1> Buscar Inmuebles
-
-         </h1>
-          </a>
-        </div>
-        <div class="col col1 mb-3 mt-3">
-          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
-          <h1>Alta Inmuebles</h1>
-          </a>
-        </div>
-        
-      </div>
-    </div>
-
     <!-- Footer -->
-    <footer class="footer text-white py-3 mt-auto">
+    <footer class="footerAll text-white py-3 mt-auto">
       <div class="container text-center">
         <div class="row">
           <!-- Sección de contacto -->
@@ -148,7 +134,7 @@ if (!isset($_SESSION['usuario_id'])) {
         </div>
       </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

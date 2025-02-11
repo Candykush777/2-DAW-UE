@@ -1,7 +1,5 @@
-
 <?php
 session_start();
-/* var_dump($_SESSION);  está muy bien para verificar si hay algun problema y no te coge una variable*/
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.html");
     exit();
@@ -12,25 +10,28 @@ if (!isset($_SESSION['usuario_id'])) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado Inmuebles</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="icon" type="image/png" href="logoG.jpeg" sizes="32x32">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
     <link rel="stylesheet" href="/Inmobiliaria/Utils/css/style.css" />
-    <title>Quality Inmobiliaria</title>
   </head>
   <body
-    class="bg-black bg-gradient bg-black-custom d-flex flex-column min-vh-100 p-3"
+    class="bg-black bodyAll bg-gradient bg-black-custom bodybody d-flex flex-column min-vh-100 p-3"
   >
     <!-- Header con barra de navegación -->
-    <div class="container">
+    <div class="container buscarPisoDiv">
       <h1
         class="tituloh1 bg-black bg-gradient bg-black-custom2 text-center p-3"
       >
@@ -58,15 +59,9 @@ if (!isset($_SESSION['usuario_id'])) {
                 <a class="nav-link text-white fs-4" href="index.php">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="">Contacto</a>
+                <a class="nav-link text-white fs-4" href="#">Contacto</a>
               </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link text-white fs-4"
-                  href="formulario_registro.html"
-                  >Registro</a
-                >
-              </li>
+             
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="logout.php"
                   >Cerrar Sesión</a
@@ -83,47 +78,30 @@ if (!isset($_SESSION['usuario_id'])) {
           </div>
         </div>
       </nav>
-    </div>
+    <main class="mainContent">
 
 
-    <!-- Fin del contenedor del header -->
+    <div class="formularioB">
 
-    <!-- Contenido principal -->
-    <div class="container usersContainer mb-3 mt-3">
-      <div class="row1 mb-3 mt-3">
-        <div class="col col1 mb-3 mt-3">
+<form action="buscar_Usuarios1.php" method="get">
 
-        <a href="compra.php" style="text-decoration: none; color: inherit;">
-         <h1>Compra Inmuebles</h1>
-         </a>
-        </div>
-        <div class="col col1 mb-3 mt-3 ">
-          <a href="listar_Inmuebles.php" style="text-decoration: none; color: inherit;">
-          <h1>
-            Listar Inmuebles
-          </h1>
-          </a>
-        </div>
-      </div>
-      <div class="row1 mb-3 mt-3">
-        <div class="col col1 mb-3 mt-3">
-          <a href="buscar_pisos.php" style="text-decoration: none; color: inherit;">
-         <h1> Buscar Inmuebles
+<label for="buscarID" class="form-label"><h3>Introduce el ID para buscar el  Usuario</h3></label>
+<input type="number" class="form-control w-50" name="id" placeholder="Introduce el ID" required>
 
-         </h1>
-          </a>
-        </div>
-        <div class="col col1 mb-3 mt-3">
-          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
-          <h1>Alta Inmuebles</h1>
-          </a>
-        </div>
+<div class="boton">
+<button type="submit" class="btn btn-success w-50">Buscar</button>
+
+</div>
+
+</form>
+
+</form>
+</div>
+    </main>
         
-      </div>
-    </div>
-
+    
     <!-- Footer -->
-    <footer class="footer text-white py-3 mt-auto">
+    <footer class="footerAll text-white py-3 mt-auto">
       <div class="container text-center">
         <div class="row">
           <!-- Sección de contacto -->
@@ -148,7 +126,7 @@ if (!isset($_SESSION['usuario_id'])) {
         </div>
       </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

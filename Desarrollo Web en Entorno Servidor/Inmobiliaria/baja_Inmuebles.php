@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 /* var_dump($_SESSION);  está muy bien para verificar si hay algun problema y no te coge una variable*/
@@ -60,13 +59,7 @@ if (!isset($_SESSION['usuario_id'])) {
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="">Contacto</a>
               </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link text-white fs-4"
-                  href="formulario_registro.html"
-                  >Registro</a
-                >
-              </li>
+            
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="logout.php"
                   >Cerrar Sesión</a
@@ -85,42 +78,21 @@ if (!isset($_SESSION['usuario_id'])) {
       </nav>
     </div>
 
+   <div class="container formBorrado">
 
-    <!-- Fin del contenedor del header -->
+<form action="baja_Inmuebles1.php" method="get">
 
-    <!-- Contenido principal -->
-    <div class="container usersContainer mb-3 mt-3">
-      <div class="row1 mb-3 mt-3">
-        <div class="col col1 mb-3 mt-3">
+<label for="buscarCodigo" class="form-label"><h3>Introduce el ID para dar de baja el Inmueble</h3></label>
+<input type="number" class="form-control w-50" name="codigo" placeholder="Introduce el Codigo de Inmueble" required>
 
-        <a href="compra.php" style="text-decoration: none; color: inherit;">
-         <h1>Compra Inmuebles</h1>
-         </a>
-        </div>
-        <div class="col col1 mb-3 mt-3 ">
-          <a href="listar_Inmuebles.php" style="text-decoration: none; color: inherit;">
-          <h1>
-            Listar Inmuebles
-          </h1>
-          </a>
-        </div>
-      </div>
-      <div class="row1 mb-3 mt-3">
-        <div class="col col1 mb-3 mt-3">
-          <a href="buscar_pisos.php" style="text-decoration: none; color: inherit;">
-         <h1> Buscar Inmuebles
+<div class="boton">
+<button type="submit" class="btn btn-danger w-50">Dar de baja</button>
 
-         </h1>
-          </a>
-        </div>
-        <div class="col col1 mb-3 mt-3">
-          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
-          <h1>Alta Inmuebles</h1>
-          </a>
-        </div>
-        
-      </div>
-    </div>
+</div>
+
+</form>
+
+   </div>
 
     <!-- Footer -->
     <footer class="footer text-white py-3 mt-auto">

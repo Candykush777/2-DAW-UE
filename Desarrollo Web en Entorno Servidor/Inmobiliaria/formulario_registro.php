@@ -1,10 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
-    exit();
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,7 +20,7 @@ if (!isset($_SESSION['usuario_id'])) {
     <link rel="stylesheet" href="/Inmobiliaria/Utils/css/style.css" />
   </head>
   <body
-    class="bg-black bg-gradient bg-black-custom d-flex flex-column min-vh-100 p-3"
+    class="bg-black bodyAll bg-gradient bg-black-custom d-flex flex-column min-vh-100 p-3"
   >
     <div class="container">
       <h1
@@ -34,7 +28,33 @@ if (!isset($_SESSION['usuario_id'])) {
       >
         Quality Inmobiliaria
       </h1>
-      <div class="form-group formulario">
+
+      <div class="container">
+      <h1 class="tituloh1 bg-black bg-gradient bg-black-custom2 text-center p-3">Quality Inmobiliaria</h1>
+      <nav class="navbar navbar-expand-lg navbar-dark  py-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/Inmobiliaria/letra-q.png" alt="Logo" width="70">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white fs-4" href="index.php">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white fs-4" href="">Contacto</a>
+              </li>
+                      
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <main class="mainContent">
+      <div class="form-group formularioR">
         <form class="form" action="registro.php" method="post">
           <label for="nombre" class="form-label">Nombre: </label>
           <input
@@ -83,8 +103,9 @@ if (!isset($_SESSION['usuario_id'])) {
         </form>
       </div>
     </div>
+    </main>
 
-    <footer class="footer text-white py-3 mt-auto">
+    <footer class="footerAll text-white py-3 mt-auto">
       <div class="container text-center">
         <div class="row">
           <div class="col-md-6 mb-3">

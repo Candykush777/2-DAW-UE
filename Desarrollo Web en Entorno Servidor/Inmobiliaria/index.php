@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,13 +33,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="index.html">Inicio</a>
+                <a class="nav-link text-white fs-4" href="index.php">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="formulario_registro.html">Registro</a>
+                <a class="nav-link text-white fs-4" href="formulario_registro.php">Registro</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="login.html">Login</a>

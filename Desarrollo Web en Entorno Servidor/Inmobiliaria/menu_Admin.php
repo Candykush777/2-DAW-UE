@@ -54,18 +54,12 @@ if (!isset($_SESSION['usuario_id'])) {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="index.html">Inicio</a>
+                <a class="nav-link text-white fs-4" href="index.php">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="">Contacto</a>
               </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link text-white fs-4"
-                  href="formulario_registro.html"
-                  >Registro</a
-                >
-              </li>
+             
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="logout.php"
                   >Cerrar Sesión</a
@@ -92,46 +86,48 @@ if (!isset($_SESSION['usuario_id'])) {
       <div class="col-6  mb-3 mt-3">
         <div class="row1 col mb-3 mt-3">
 
-        <a href="compra.php" style="text-decoration: none; color: inherit;">
+        <a href="formulario_registro.php" style="text-decoration: none; color: inherit;">
          <h1 class="text-center">Alta Usuarios</h1>
          </a>
         </div>
         <div class="row1 col mb-3 mt-3 ">
-          <a href="listar_Inmuebles.php" style="text-decoration: none; color: inherit;">
+          <a href="baja_Usuarios.php" style="text-decoration: none; color: inherit;">
           <h1 class="text-center">
             Baja Usuarios
           </h1>
           </a>
         </div>
         <div class="row1 col mb-3 mt-3">
-          <a href="buscar_pisos.php" style="text-decoration: none; color: inherit;">
+          <a href="buscar_Usuarios.php" style="text-decoration: none; color: inherit;"> 
          <h1> Buscar Usuarios
 
          </h1>
           </a>
         </div>
         <div class="row1 col mb-3 mt-3">
-          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
+          <a href="modificar_Usuarios.php" style="text-decoration: none; color: inherit;"> <!-- falta -->
           <h1>Modificar Usuarios</h1>
           </a>
         </div>
         <div class="row1 col mb-3 mt-3">
-          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
+          <a href="listar_Usuarios.php" style="text-decoration: none; color: inherit;"> 
           <h1>Listar Usuarios</h1>
           </a>
         </div>
       </div>
       <div class="col-6  mb-3 mt-3">
         <div class="row1 col mb-3 mt-3">
-          <a href="buscar_pisos.php" style="text-decoration: none; color: inherit;">
+          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
          <h1> Alta Inmuebles
 
          </h1>
           </a>
         </div>
         <div class="row1 col mb-3 mt-3">
-          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
-          <h1>Baja Inmuebles</h1>
+          <a href="baja_Inmuebles.php" style="text-decoration: none; color: inherit;"> 
+          <h1> Baja Inmuebles
+
+</h1>
           </a>
         </div>
         <div class="row1 col mb-3 mt-3">
@@ -142,12 +138,12 @@ if (!isset($_SESSION['usuario_id'])) {
           </a>
         </div>
         <div class="row1 col mb-3 mt-3">
-          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
+          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;"> <!-- falta -->
           <h1>Modificar Inmuebles</h1>
           </a>
         </div>
         <div class="row1 col mb-3 mt-3">
-          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;">
+          <a href="listar_Inmuebles.php" style="text-decoration: none; color: inherit;">
           <h1>Listar pisos</h1>
           </a>
         </div>

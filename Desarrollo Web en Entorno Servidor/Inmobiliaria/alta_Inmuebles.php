@@ -50,7 +50,7 @@ if (!isset($_SESSION['usuario_id'])) {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="index.html">Inicio</a>
+                <a class="nav-link text-white fs-4" href="index.php">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="#">Contacto</a>
@@ -60,6 +60,13 @@ if (!isset($_SESSION['usuario_id'])) {
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="logout.php">Cerrar Sesión</a>
+              </li>
+              <li class="nav-item">
+              <div class="container sesion">
+              <h5>Sesión iniciada, <?php echo $_SESSION['nombre']; ?>!</h5>
+              <p style="color: crimson;"><?php echo $_SESSION['email']; ?></p>  <!-- Aquí lo mostramos -->
+              <p>ID de usuario: <?php echo $_SESSION['usuario_id']; ?></p>
+              </div>
               </li>
             </ul>
           </div>
