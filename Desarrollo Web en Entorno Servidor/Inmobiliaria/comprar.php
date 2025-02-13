@@ -35,9 +35,16 @@ if (mysqli_num_rows($result) >0) {
        echo '<p><b>Metros: </b>' . $row['metros'] . '</p>';
        echo '<p><b>Usuario id:</b>' . $row['usuario_id'] . '</p>';
        echo '<p><b>Código Piso: </b>' . $row['Codigo_piso'] . '</p>';
-       echo '<button type="button" class="btn btn-success" onclick="comprarPiso()">Comprar</button>';
-       echo '</div>'; // Cerrar card-text
 
+        // Botón con formulario para enviar los datos a comprar.php
+        echo '<form action="comprar_tablaNueva.php" method="POST" onsubmit="comprarPiso()">';
+        echo '<input type="hidden" name="usuario_comprador" value="' . $row['usuario_id'] . '">';
+        echo '<input type="hidden" name="codigo_piso" value="' . $row['Codigo_piso'] . '">';
+        echo '<input type="hidden" name="precio_final" value="' . $row['precio'] . '">';
+        echo '<button type="submit" class="btn btn-success">Comprar</button>';
+        echo '</form>';
+
+       echo '</div>'; // Cerrar card-text
         echo '</div>'; // Cerrar card-body
         echo '</div>'; // Cerrar card
         echo '</div>'; // Cerrar container

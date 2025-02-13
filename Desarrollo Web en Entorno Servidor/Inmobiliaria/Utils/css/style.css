@@ -295,11 +295,11 @@ align-items: end;
     border-radius: 10px;
     width: 65%;
     transition: transform 0.3s ease;
-    margin-top: 10%;
-    text-align: center;
+      text-align: center;
+      margin-top: -15%;
 }
 
-.formularioRB:hover {
+.formularioB:hover {
     transform: scale(1.05); /* Ya no necesitas translate */
     box-shadow: 0 10px 20px rgba(248, 247, 247, 0.2);
 }

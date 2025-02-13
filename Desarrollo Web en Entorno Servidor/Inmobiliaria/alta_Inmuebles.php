@@ -1,9 +1,5 @@
 <?php
-session_start();
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
-    exit();
-}
+include 'validar_Sesion.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +52,7 @@ if (!isset($_SESSION['usuario_id'])) {
                 <a class="nav-link text-white fs-4" href="#">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="formulario_registro.html">Volver Atrás</a>
+                <a class="nav-link text-white fs-4" href="menu_Usuarios.php">Volver Atrás</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="logout.php">Cerrar Sesión</a>

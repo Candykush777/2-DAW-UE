@@ -10,7 +10,7 @@
                     $sql .= " AND metros < 100";
                     break;
                 case '100-170':
-                    $sql .= " AND metros BETWEEN 100 AND 127";
+                    $sql .= " AND metros BETWEEN 100 AND 170";
                     break;
                 case 'mas_170':
                     $sql .= " AND metros > 170";

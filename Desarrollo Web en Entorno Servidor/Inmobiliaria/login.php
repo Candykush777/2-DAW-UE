@@ -22,6 +22,8 @@ $_SESSION['usuario_id']=$usuario['usuario_id'];
 $_SESSION['nombre']=$usuario['nombres'];
 $_SESSION['email'] = $usuario['correo']; 
 $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
+$_SESSION['start'] = time();
+$_SESSION['expire'] = $_SESSION['start'] + (24	 * 60 * 60) ; // 24 horas
 
 // vamos a verificar que tipo usuario es para redirigir donde sea necesario
 

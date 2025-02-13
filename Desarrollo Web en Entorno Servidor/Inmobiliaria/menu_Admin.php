@@ -1,10 +1,5 @@
 <?php
-session_start();
-/* var_dump($_SESSION);  está muy bien para verificar si hay algun problema y no te coge una variable*/
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
-    exit();
-}
+include 'validar_Sesion.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,7 +100,7 @@ if (!isset($_SESSION['usuario_id'])) {
           </a>
         </div>
         <div class="row1 col mb-3 mt-3">
-          <a href="modificar_Usuarios.php" style="text-decoration: none; color: inherit;"> <!-- falta -->
+          <a href="modificar_Usuarios.php" style="text-decoration: none; color: inherit;"> 
           <h1>Modificar Usuarios</h1>
           </a>
         </div>
@@ -138,7 +133,7 @@ if (!isset($_SESSION['usuario_id'])) {
           </a>
         </div>
         <div class="row1 col mb-3 mt-3">
-          <a href="alta_Inmuebles.php" style="text-decoration: none; color: inherit;"> <!-- falta -->
+          <a href="modificar_Pisos.php" style="text-decoration: none; color: inherit;"> 
           <h1>Modificar Inmuebles</h1>
           </a>
         </div>

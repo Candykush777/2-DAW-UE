@@ -1,7 +1,7 @@
 <?php 
 
 
-
+include 'validar_Sesion.php';
 
 include 'conexion.php';
 
@@ -13,6 +13,7 @@ $cp = mysqli_real_escape_string($conexion, trim(strip_tags($_POST['cp'])));
 $metros = mysqli_real_escape_string($conexion, trim(strip_tags($_POST['metros'])));
 $zona = mysqli_real_escape_string($conexion, trim(strip_tags($_POST['zona'])));
 $precio = mysqli_real_escape_string($conexion, trim(strip_tags($_POST['precio'])));
+$usuario_id = mysqli_real_escape_string($conexion, trim(strip_tags($_SESSION['usuario_id'])));
 // Manejo del archivo de la imagen
 $imagen = $_FILES['imagen']['name']; // Nombre original del archivo
 
@@ -28,8 +29,8 @@ $directorio = 'uploads/';
 $ruta_imagen = $directorio . basename($imagen); // Ruta completa
 // Movemos la imagen a la carpeta de destino
 if (move_uploaded_file($imagen_tmp, $ruta_imagen)) {
-    $sql = "INSERT INTO pisos (calle, numero, piso, puerta, cp, metros, zona, precio, imagen) 
-            VALUES ('$calle', '$numero', '$piso', '$puerta', '$cp', '$metros', '$zona', '$precio', '$ruta_imagen')";
+    $sql = "INSERT INTO pisos (calle, numero, piso, puerta, cp, metros, zona, precio, imagen,usuario_id) 
+            VALUES ('$calle', '$numero', '$piso', '$puerta', '$cp', '$metros', '$zona', '$precio', '$ruta_imagen','$usuario_id')";
     if (mysqli_query($conexion, $sql)) {
         echo "Inmueble añadido exitosamente";
     } else {

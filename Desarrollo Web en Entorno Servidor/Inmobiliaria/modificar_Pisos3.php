@@ -1,27 +1,49 @@
-
-<?php
-include 'validar_Sesion.php';
+<?php 
+include 'validar_Sesion.php'
 ?>
-<?php
+<?php 
+
 include 'conexion.php';
 
-if(isset($_REQUEST['id'])  && isset($_REQUEST['id'])) {
+$codigo_Piso=mysqli_real_escape_string($conexion,trim(strip_tags($_REQUEST['id'])));
+$calle=mysqli_real_escape_string($conexion,trim(strip_tags($_REQUEST['calle'])));
+$numero=mysqli_real_escape_string($conexion,trim(strip_tags($_REQUEST['numero'])));
+$piso=mysqli_real_escape_string($conexion,trim(strip_tags($_REQUEST['piso'])));
+$puerta=mysqli_real_escape_string($conexion,trim(strip_tags($_REQUEST['puerta'])));
+$cp=mysqli_real_escape_string($conexion,trim(strip_tags($_REQUEST['cp'])));
+$metros=mysqli_real_escape_string($conexion,trim(strip_tags($_REQUEST['metros'])));
+$zona=mysqli_real_escape_string($conexion,trim(strip_tags($_REQUEST['zona'])));
+$precio=mysqli_real_escape_string($conexion,trim(strip_tags($_REQUEST['precio'])));
+$imagen=mysqli_real_escape_string($conexion,trim(strip_tags($_REQUEST['imagen'])));
 
-$id = mysqli_real_escape_string($conexion, trim(strip_tags($_REQUEST['id'])));
+$sql = "UPDATE pisos SET 
+        calle = '$calle', 
+        numero = '$numero', 
+        piso = '$piso', 
+        puerta = '$puerta', 
+        cp = '$cp', 
+        metros = '$metros', 
+        zona = '$zona', 
+        precio = '$precio', 
+        imagen = '$imagen' 
+        WHERE Codigo_piso = '$codigo_Piso'";
 
-$sql = "SELECT * FROM usuario WHERE usuario_id = $id";
-$result = mysqli_query($conexion, $sql);
+$result=mysqli_query($conexion,$sql);
 
-$usuario = mysqli_fetch_assoc($result);
+if ($result) {
+
+$mensaje="Actualización exitosa";
 }
-mysqli_close($conexion);
+    else{
+        $mensaje= "Error al actualizar: " .mysqli_error($conexion);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar Usuario</title>
+    <title>Modificar Inmuebles</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet"  href="/Inmobiliaria/Utils/css/style.css">
 </head>
@@ -44,9 +66,6 @@ mysqli_close($conexion);
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link text-white fs-4" href="index.php">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link text-white fs-4" href="#">Contacto</a></li>
-                        <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="menu_Admin.php">Volver Atrás</a>
-              </li>                    
                         <li class="nav-item"><a class="nav-link text-white fs-4" href="logout.php">Cerrar Sesión</a></li>
                         <li class="nav-item">
                             <div class="container sesion">
@@ -62,53 +81,17 @@ mysqli_close($conexion);
     </div>
 
     <main class="mainContent">
-
-<div class="formularioB">
-
-<form action="modificar_Usuarios.php" method="get">
-
-<label for="buscarID" class="form-label"><h3>Introduce el ID para buscar el  Usuario</h3></label>
-<input type="number" class="form-control w-50" name="id" placeholder="Introduce el ID" required>
-
-<div class="boton">
-<button type="submit" class="btn btn-success w-50">Buscar</button>
-
-</div>
-
-</form>
-
-</form>
-</div>
-</main>
-    <!-- Contenido Principal -->
-    <!-- Mostrar datos del usuario si se ha buscado -->
-    <?php if (isset($_REQUEST['id'])): ?>
-    <main class="mainContent container mt-4">
-        <div class="card bg-dark text-white">
-            <div class="card-body">
-                <?php if ($usuario): ?>
-                    <h3 class="text-center mb-4">Usuario encontrado</h3>
-                    <table class="table table-dark table-striped">
-                        <tr><th>ID:</th><td><?php echo $usuario['usuario_id']; ?></td></tr>
-                        <tr><th>Nombre:</th><td><?php echo $usuario['nombres']; ?></td></tr>
-                        <tr><th>Primer Apellido:</th><td><?php echo $usuario['apellido1']; ?></td></tr>
-                        <tr><th>Segundo Apellido:</th><td><?php echo $usuario['apellido2']; ?></td></tr>
-                        <tr><th>Email:</th><td><?php echo $usuario['correo']; ?></td></tr>
-                        <tr><th>Tipo de Usuario:</th><td><?php echo $usuario['tipo_usuario']; ?></td></tr>
-                    </table>
-
-                    <div class="text-center mt-4">
-                    <a href="modificar_Usuarios1.php?id=<?php echo $usuario['usuario_id']; ?>" class="btn btn-warning w-50">
-                        Modificar Usuario
-                    </a>
-                </div>
-                <?php else: ?>
-                    <div class="alert alert-warning text-center">No se encontró ningún usuario con ese ID</div>
-                <?php endif; ?>
-            </div>
+    <div class="container mt-5">
+        <div class="alert <?php echo ($result) ? 'alert-success' : 'alert-danger'; ?>" role="alert">
+            <?php echo $mensaje; ?>
         </div>
-    </main>
-    <?php endif; ?>
+        <div class="text-center mt-4">
+            <a href="modificar_Pisos2.php?id=<?php echo $codigo_Piso; ?>" class="btn btn-primary">Volver a editar</a>
+            <a href="menu_Admin.php" class="btn btn-secondary">Ir al inicio</a>
+        </div>
+    </div>
+</main>
+
 
     <!-- Footer -->
     <footer class="footerAll text-white py-3 mt-auto">

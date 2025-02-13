@@ -35,6 +35,7 @@
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="index.php">Inicio</a>
               </li>
+              
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="">Contacto</a>
               </li>
@@ -55,31 +56,28 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="position-relative">
-                <img src="/Inmobiliaria/piso6.jpg" class="d-block w-100" alt="Imagen 1" style="max-height: 550px;" />
+                <img src="/Inmobiliaria/piso_pozuelo.webp" class="d-block w-100" alt="Imagen 1" style="max-height: 550px;" />
                 <!-- Burbuja gris semi-transparente con texto -->
                 <div class=" text-center position-absolute bottom-0 start-50 translate-middle-x mb-5 p-3 rounded-3  text-white fw-bold fs-2">
-                   Precioso Ático en el centro de Madrid 1.000.000€.
+                Piso minimalista en Pozuelo 1.455.000€.
                 </div>
               </div>
             </div>
             <div class="carousel-item">
               <div class="position-relative">
-                <img src="/Inmobiliaria/piso2.jpg" class="d-block w-100" alt="Imagen 2" style="max-height: 550px;" />
+                <img src= "/Inmobiliaria/piso_granVia.jpg"    class="d-block w-100" alt="Imagen 2" style="max-height: 550px;" />
                 <!-- Burbuja gris semi-transparente con texto -->
                 <div class=" text-center position-absolute bottom-0 start-50 translate-middle-x mb-5 p-3 rounded-3  text-white fw-bold fs-2">
-                  Piso minimalista en Pozuelo 1.455.000€.
+                                  Precioso Ático en el centro de Madrid 1.000.000€.
                 </div>
               </div>
             </div>
-
-           
-    
-            <div class="carousel-item">
+                         <div class="carousel-item">
               <div class="position-relative">
-                <img src="/Inmobiliaria/piso1.webp" class="d-block w-100" alt="Imagen 3" style="max-height: 550px;"/>
+                <img src="/Inmobiliaria/piso_Majadahonda.jpg" class="d-block w-100" alt="Imagen 3" style="max-height: 550px;"/>
                 <!-- Burbuja gris semi-transparente con texto -->
                 <div class="text-center position-absolute bottom-0 start-0 mb-5 p-3 rounded-3 text-white fw-bold fs-2">
-                  <p>Piso recien reformado, Barrio de Salamanca 875.000€</p>
+                  <p>Piso recien reformado, Majadahonda 875.000€</p>
                 </div>
                 
               </div>

@@ -43,6 +43,8 @@ if (!isset($_SESSION['usuario_id'])) {
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="">Contacto</a>
+              </li><li class="nav-item">
+                <a class="nav-link text-white fs-4" href="menu_Usuarios.php">Volver atrás</a>
               </li>
                           <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="logout.php">Cerrar Sesión</a>

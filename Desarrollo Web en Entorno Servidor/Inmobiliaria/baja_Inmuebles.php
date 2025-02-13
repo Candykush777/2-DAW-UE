@@ -1,10 +1,5 @@
 <?php
-session_start();
-/* var_dump($_SESSION);  está muy bien para verificar si hay algun problema y no te coge una variable*/
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
-    exit();
-}
+include 'validar_Sesion.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,6 +53,9 @@ if (!isset($_SESSION['usuario_id'])) {
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white fs-4" href="menu_Admin.php">Volver Atrás</a>
               </li>
             
               <li class="nav-item">

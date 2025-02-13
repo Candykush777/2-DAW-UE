@@ -1,27 +1,13 @@
-
 <?php
 include 'validar_Sesion.php';
 ?>
-<?php
-include 'conexion.php';
 
-if(isset($_REQUEST['id'])  && isset($_REQUEST['id'])) {
-
-$id = mysqli_real_escape_string($conexion, trim(strip_tags($_REQUEST['id'])));
-
-$sql = "SELECT * FROM usuario WHERE usuario_id = $id";
-$result = mysqli_query($conexion, $sql);
-
-$usuario = mysqli_fetch_assoc($result);
-}
-mysqli_close($conexion);
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar Usuario</title>
+    <title>Modificar Inmuebles</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet"  href="/Inmobiliaria/Utils/css/style.css">
 </head>
@@ -44,9 +30,7 @@ mysqli_close($conexion);
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link text-white fs-4" href="index.php">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link text-white fs-4" href="#">Contacto</a></li>
-                        <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="menu_Admin.php">Volver Atrás</a>
-              </li>                    
+                        <li class="nav-item"><a class="nav-link text-white fs-4" href="menu_Admin.php">Volver atrás</a></li>
                         <li class="nav-item"><a class="nav-link text-white fs-4" href="logout.php">Cerrar Sesión</a></li>
                         <li class="nav-item">
                             <div class="container sesion">
@@ -63,15 +47,16 @@ mysqli_close($conexion);
 
     <main class="mainContent">
 
-<div class="formularioB">
+<div class="formularioM">
 
-<form action="modificar_Usuarios.php" method="get">
+<form action="modificar_Pisos2.php" method="get">
 
-<label for="buscarID" class="form-label"><h3>Introduce el ID para buscar el  Usuario</h3></label>
-<input type="number" class="form-control w-50" name="id" placeholder="Introduce el ID" required>
+<label for="buscarID" class="form-label"><h3>Introduce el Codigo inmueble para buscarlo</h3></label>
+<input type="number" class="form-control w-50" name="id" placeholder="Introduce el Código" required>
 
 <div class="boton">
-<button type="submit" class="btn btn-success w-50">Buscar</button>
+<button type="submit" class="btn btn-success w-50" >Enviar</button><br>
+<button type="reset" class="btn btn-danger w-50" >Borrar</button>
 
 </div>
 
@@ -80,35 +65,7 @@ mysqli_close($conexion);
 </form>
 </div>
 </main>
-    <!-- Contenido Principal -->
-    <!-- Mostrar datos del usuario si se ha buscado -->
-    <?php if (isset($_REQUEST['id'])): ?>
-    <main class="mainContent container mt-4">
-        <div class="card bg-dark text-white">
-            <div class="card-body">
-                <?php if ($usuario): ?>
-                    <h3 class="text-center mb-4">Usuario encontrado</h3>
-                    <table class="table table-dark table-striped">
-                        <tr><th>ID:</th><td><?php echo $usuario['usuario_id']; ?></td></tr>
-                        <tr><th>Nombre:</th><td><?php echo $usuario['nombres']; ?></td></tr>
-                        <tr><th>Primer Apellido:</th><td><?php echo $usuario['apellido1']; ?></td></tr>
-                        <tr><th>Segundo Apellido:</th><td><?php echo $usuario['apellido2']; ?></td></tr>
-                        <tr><th>Email:</th><td><?php echo $usuario['correo']; ?></td></tr>
-                        <tr><th>Tipo de Usuario:</th><td><?php echo $usuario['tipo_usuario']; ?></td></tr>
-                    </table>
 
-                    <div class="text-center mt-4">
-                    <a href="modificar_Usuarios1.php?id=<?php echo $usuario['usuario_id']; ?>" class="btn btn-warning w-50">
-                        Modificar Usuario
-                    </a>
-                </div>
-                <?php else: ?>
-                    <div class="alert alert-warning text-center">No se encontró ningún usuario con ese ID</div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </main>
-    <?php endif; ?>
 
     <!-- Footer -->
     <footer class="footerAll text-white py-3 mt-auto">

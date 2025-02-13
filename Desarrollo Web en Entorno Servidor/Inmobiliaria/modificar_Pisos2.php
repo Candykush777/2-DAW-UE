@@ -1,27 +1,24 @@
-
-<?php
-include 'validar_Sesion.php';
+<?php 
+include 'validar_Sesion.php'
 ?>
-<?php
+<?php 
+
 include 'conexion.php';
 
-if(isset($_REQUEST['id'])  && isset($_REQUEST['id'])) {
+$codigo_Piso = trim(strip_tags($_REQUEST['id']));
+$sql ="SELECT Codigo_piso, calle, numero, piso, puerta, cp, metros, zona, precio, imagen, usuario_id 
+FROM pisos WHERE Codigo_piso=$codigo_Piso";
 
-$id = mysqli_real_escape_string($conexion, trim(strip_tags($_REQUEST['id'])));
+$result =mysqli_query($conexion,$sql);
 
-$sql = "SELECT * FROM usuario WHERE usuario_id = $id";
-$result = mysqli_query($conexion, $sql);
 
-$usuario = mysqli_fetch_assoc($result);
-}
-mysqli_close($conexion);
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar Usuario</title>
+    <title>Modificar Inmuebles</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet"  href="/Inmobiliaria/Utils/css/style.css">
 </head>
@@ -44,9 +41,6 @@ mysqli_close($conexion);
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link text-white fs-4" href="index.php">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link text-white fs-4" href="#">Contacto</a></li>
-                        <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="menu_Admin.php">Volver Atrás</a>
-              </li>                    
                         <li class="nav-item"><a class="nav-link text-white fs-4" href="logout.php">Cerrar Sesión</a></li>
                         <li class="nav-item">
                             <div class="container sesion">
@@ -63,52 +57,54 @@ mysqli_close($conexion);
 
     <main class="mainContent">
 
-<div class="formularioB">
-
-<form action="modificar_Usuarios.php" method="get">
-
-<label for="buscarID" class="form-label"><h3>Introduce el ID para buscar el  Usuario</h3></label>
-<input type="number" class="form-control w-50" name="id" placeholder="Introduce el ID" required>
-
-<div class="boton">
-<button type="submit" class="btn btn-success w-50">Buscar</button>
-
-</div>
-
-</form>
-
-</form>
-</div>
-</main>
-    <!-- Contenido Principal -->
-    <!-- Mostrar datos del usuario si se ha buscado -->
-    <?php if (isset($_REQUEST['id'])): ?>
-    <main class="mainContent container mt-4">
-        <div class="card bg-dark text-white">
-            <div class="card-body">
-                <?php if ($usuario): ?>
-                    <h3 class="text-center mb-4">Usuario encontrado</h3>
-                    <table class="table table-dark table-striped">
-                        <tr><th>ID:</th><td><?php echo $usuario['usuario_id']; ?></td></tr>
-                        <tr><th>Nombre:</th><td><?php echo $usuario['nombres']; ?></td></tr>
-                        <tr><th>Primer Apellido:</th><td><?php echo $usuario['apellido1']; ?></td></tr>
-                        <tr><th>Segundo Apellido:</th><td><?php echo $usuario['apellido2']; ?></td></tr>
-                        <tr><th>Email:</th><td><?php echo $usuario['correo']; ?></td></tr>
-                        <tr><th>Tipo de Usuario:</th><td><?php echo $usuario['tipo_usuario']; ?></td></tr>
-                    </table>
-
-                    <div class="text-center mt-4">
-                    <a href="modificar_Usuarios1.php?id=<?php echo $usuario['usuario_id']; ?>" class="btn btn-warning w-50">
-                        Modificar Usuario
-                    </a>
+    <?php 
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
+            ?>
+            <div class="container pintaPiso mt-2 mb-4">
+                <div class="card shadow">
+                    <img class="card-img-top" src="<?php echo $row['imagen']; ?>" alt="Imagen del piso">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $row['precio']; ?>€</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $row['zona']; ?></h6>
+                        <div class="card-text">
+                            <p><b>Calle:</b> <?php echo $row['calle']; ?></p>
+                            <p><b>Número:</b> <?php echo $row['numero']; ?></p>
+                            <p><b>Piso:</b> <?php echo $row['piso']; ?></p>
+                            <p><b>Puerta:</b> <?php echo $row['puerta']; ?></p>
+                            <p><b>CP:</b> <?php echo $row['cp']; ?></p>
+                            <p><b>Metros:</b> <?php echo $row['metros']; ?>m²</p>
+                            <p><b>Código:</b> <?php echo $row['Codigo_piso']; ?></p>
+                        </div>
+                    </div>
                 </div>
-                <?php else: ?>
-                    <div class="alert alert-warning text-center">No se encontró ningún usuario con ese ID</div>
-                <?php endif; ?>
             </div>
-        </div>
+
+            <form action="modificar_Pisos3.php" method="post">
+                <!-- Enviar los detalles del piso -->
+                <input type="hidden" name="id" value="<?php echo $row['Codigo_piso']; ?>">
+                <input type="text" name="calle" value="<?php echo $row['calle']; ?>">
+                <input type="number" name="numero" value="<?php echo $row['numero']; ?>">
+                <input type="number" name="piso" value="<?php echo $row['piso']; ?>">
+                <input type="text" name="puerta" value="<?php echo $row['puerta']; ?>">
+                <input type="number" name="cp" value="<?php echo $row['cp']; ?>">
+                <input type="number" name="metros" value="<?php echo $row['metros']; ?>">
+                <input type="text" name="zona" value="<?php echo $row['zona']; ?>">
+                <input type="number" name="precio" value="<?php echo $row['precio']; ?>">
+                <input type="file" name="imagen" value="<?php echo $row['imagen']; ?>">
+
+                <button type="submit" class="btn btn-warning w-75">Modificar Piso</button>
+            </form>
+            <?php
+        } else {
+            ?>
+            <div class="alert alert-danger mt-3">
+                No hay pisos disponibles con los filtros seleccionados.
+            </div>
+            <?php
+        }
+    ?>
     </main>
-    <?php endif; ?>
 
     <!-- Footer -->
     <footer class="footerAll text-white py-3 mt-auto">
