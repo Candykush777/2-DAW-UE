@@ -6,7 +6,7 @@ include 'conexion.php';
 
 $id=mysqli_real_escape_string($conexion,trim(strip_tags($_REQUEST['id'])));
 
-$sql ="DELETE  from  usuario  where id=$id";
+$sql ="DELETE  FROM  usuario  WHERE usuario_id=$id";
 
 mysqli_query($conexion,$sql);
 

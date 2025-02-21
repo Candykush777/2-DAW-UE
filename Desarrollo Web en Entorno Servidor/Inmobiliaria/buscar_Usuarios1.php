@@ -56,7 +56,7 @@ mysqli_close($conexion);
         </nav>
     </div>
 
-    <!-- Contenido Principal -->
+   
     <main class="mainContent container mt-4">
         <div class="card bg-dark text-white">
             <div class="card-body">
@@ -77,23 +77,30 @@ mysqli_close($conexion);
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footerAll text-white py-3 mt-auto">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <h5>Contacto</h5>
-                    <p>Dirección: Calle Falsa 123, Ciudad</p>
-                    <p>Teléfono: +123 456 789</p>
-                </div>
-                <div class="col-md-6">
-                    <h5>Síguenos</h5>
-                    <a href="#" class="text-white me-3"><img src="instagram-icon.png" alt="Instagram" width="30"></a>
-                    <a href="#" class="text-white me-3"><img src="twitter-icon.png" alt="Twitter" width="30"></a>
-                    <a href="#" class="text-white"><img src="facebook-icon.png" alt="Facebook" width="30"></a>
-                </div>
-            </div>
+    <footer class="footer text-white py-3 mt-auto">
+      <div class="container text-center ">
+        <div class="row">
+       
+          <div class="col-md-6 mb-3">
+            <h5>Contacto</h5>
+            <p>Dirección: Calle Virgen del Puerto 15</p>
+            <p>Teléfono: +987 654 321</p>
+          </div>
+        
+          <div class="col-md-6">
+            <h5>Síguenos</h5>
+            <a href="#" class="text-white me-3">
+              <img src="./instagram.png" alt="Instagram" width="30" />
+            </a>
+            <a href="#" class="text-white me-3">
+              <img src="./logotipo-de-twitter.png" alt="Twitter" width="30" />
+            </a>
+            <a href="#" class="text-white">
+              <img src="./facebook.png" alt="Facebook" width="30" />
+            </a>
+          </div>
         </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -46,7 +46,7 @@ if ($_SESSION['tipo_usuario'] == 'administrador') {
     echo "<script>alert('Credenciales incorrectas. Inténtalo de nuevo.');window.location.href='login.html';</script>";
 }
 
-//cerrar conexion
+
 
 mysqli_close($conexion);
 

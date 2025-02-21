@@ -1,7 +1,6 @@
-/* Estilo del header */
 .titulo {
     margin-bottom: 0;
-    /* Elimina espacio entre el h1 y la nav */
+
 }
 
 .tituloh1 {
@@ -17,7 +16,7 @@
     color: whitesmoke;
 }
 
-/* Estilo del footer */
+
 .footer {
     text-align: center;
 }
@@ -29,7 +28,7 @@ img {
 
 .tooltip-text {
     background-color: rgb(255, 254, 254);
-    /* Gris semi-transparente */
+
     color: white;
     font-size: 16px;
     max-width: 200px;
@@ -40,7 +39,7 @@ img {
 
 .bg-black-custom {
     background: linear-gradient(to bottom, #2eb8c7, #000000) !important;
-    /* Rojo a negro */
+
 }
 
 .bg-black-custom2 {
@@ -57,10 +56,10 @@ img {
     flex-direction: column;
     align-items: center;
     position: absolute;
-       top: 50%;
+    top: 50%;
     left: 50%;
-     transform: translate(-50%, -50%);
-       transition: transform 0.3s ease;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
     /* normlamente pondria flex enel body pero com quiero usar
  el mismo style he tendido que poner position etc */
 }
@@ -114,7 +113,7 @@ input {
         box-shadow 0.3s;
 }
 
-.col1{
+.col1 {
     text-align: center;
     border: solid black 5px;
     background-color: white;
@@ -139,7 +138,7 @@ input {
 .row1 {
     display: flex;
     gap: 20px;
-    /* Separa las columnas (las cards) dentro de la misma fila */
+
 }
 
 .col:hover {
@@ -180,12 +179,9 @@ input {
 
 .formulario1 input {
     width: 260px;
-    /* Ajusta el ancho */
     height: 30px;
-    /* Ajusta la altura */
     font-size: 12px;
-    /* Tamaño del texto dentro del input */
-    /* Reduce el espacio interno */
+
 }
 
 .table {
@@ -193,12 +189,10 @@ input {
 }
 
 .pintaPiso {
-
     border: solid black 2px;
     background-color: white;
     width: 30%;
     border-radius: 10px;
-
     text-align: center;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
 
@@ -206,57 +200,47 @@ input {
 
 .dire {
     margin: 0;
-    /* Elimina el margen externo */
     padding: 0;
-    /* Elimina el relleno interno */
     line-height: 1.2;
-    /* Ajusta la altura de la línea para reducir el espacio entre líneas */
 }
 
 .dire p {
     margin: 5px 0;
-    /* Ajusta el margen superior e inferior de los párrafos */
+
 }
 
+.sesion {
 
-
-
-.sesion{
-
-    border:solid rgb(7, 7, 7) 2px;
+    border: solid rgb(7, 7, 7) 2px;
     border-radius: 5px;
     background-color: aliceblue;
     padding: 2%;
     width: 105%;
-    
-
 }
+
 .sesion p {
-    margin-bottom: 10px;  /* Reducir el margen entre las filas de texto */
-    word-wrap: break-word;  /* Permitir que el texto largo del email se ajuste automáticamente */
+    margin-bottom: 10px;
+    word-wrap: break-word;
 }
 
-.formBorrado{
+.formBorrado {
     margin-top: 10%;
-display: flex;
-align-items: center;
-justify-content: center;
-border: solid black 3px;
-border-radius: 15px;
-padding: 2%;
-background-color: aliceblue;
-width: 70%;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid black 3px;
+    border-radius: 15px;
+    padding: 2%;
+    background-color: aliceblue;
+    width: 70%;
 
 }
 
-.footerAll{
+.footerAll {
 
-display:flex ;
-
-flex-direction: column;
-align-items: end;
-
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 
 }
 
@@ -284,7 +268,7 @@ align-items: end;
 }
 
 .formularioR:hover {
-    transform: scale(1.05); /* Ya no necesitas translate */
+    transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(248, 247, 247, 0.2);
 }
 
@@ -295,12 +279,12 @@ align-items: end;
     border-radius: 10px;
     width: 65%;
     transition: transform 0.3s ease;
-      text-align: center;
-      margin-top: -15%;
+    text-align: center;
+    margin-top: -15%;
 }
 
 .formularioB:hover {
-    transform: scale(1.05); /* Ya no necesitas translate */
+    transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(248, 247, 247, 0.2);
 }
 
@@ -316,6 +300,6 @@ align-items: end;
 }
 
 .formularioM:hover {
-    transform: scale(1.05); /* Ya no necesitas translate */
+    transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(248, 247, 247, 0.2);
 }

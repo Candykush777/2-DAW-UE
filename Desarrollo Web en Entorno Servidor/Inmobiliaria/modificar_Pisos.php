@@ -13,7 +13,7 @@ include 'validar_Sesion.php';
 </head>
 <body class="bg-black bodyAll bg-gradient bg-black-custom bodybody d-flex flex-column min-vh-100 p-3">
 
-    <!-- Navbar -->
+    
     <div class="container buscarPisoDiv">
         <h1 class="tituloh1 bg-black bg-gradient bg-black-custom2 text-center p-3">
             Quality Inmobiliaria
@@ -67,7 +67,7 @@ include 'validar_Sesion.php';
 </main>
 
 
-    <!-- Footer -->
+    
     <footer class="footerAll text-white py-3 mt-auto">
         <div class="container text-center">
             <div class="row">

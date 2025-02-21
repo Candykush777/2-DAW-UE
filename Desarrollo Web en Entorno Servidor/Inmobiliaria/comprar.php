@@ -16,7 +16,7 @@ if (mysqli_num_rows($result) >0) {
 
         echo '<div class="card ">';
 
-        // Mostrar la imagen correctamente usando la etiqueta <img>
+       
         echo '<img class="card-img-top mt-1" src="' . $row['imagen'] . '" alt="Imagen del piso">';
 
         echo '<div class="card-body ">';
@@ -25,7 +25,7 @@ if (mysqli_num_rows($result) >0) {
 
         echo '<div class="card-title mt-2 mb-2"><h5>' . $row['zona'] . '</h5></div>';
 
-       // Agrupar todos los detalles en un solo div
+       
        echo '<div class="card-text dire">';
        echo '<p><b>Calle: </b>' . $row['calle'] . '</p>';
        echo '<p><b>Número: </b>' . $row['numero'] . '</p>';
@@ -36,7 +36,7 @@ if (mysqli_num_rows($result) >0) {
        echo '<p><b>Usuario id:</b>' . $row['usuario_id'] . '</p>';
        echo '<p><b>Código Piso: </b>' . $row['Codigo_piso'] . '</p>';
 
-        // Botón con formulario para enviar los datos a comprar.php
+     
         echo '<form action="comprar_tablaNueva.php" method="POST" onsubmit="comprarPiso()">';
         echo '<input type="hidden" name="usuario_comprador" value="' . $row['usuario_id'] . '">';
         echo '<input type="hidden" name="codigo_piso" value="' . $row['Codigo_piso'] . '">';
@@ -44,10 +44,10 @@ if (mysqli_num_rows($result) >0) {
         echo '<button type="submit" class="btn btn-success">Comprar</button>';
         echo '</form>';
 
-       echo '</div>'; // Cerrar card-text
-        echo '</div>'; // Cerrar card-body
-        echo '</div>'; // Cerrar card
-        echo '</div>'; // Cerrar container
+       echo '</div>'; 
+        echo '</div>'; 
+        echo '</div>'; 
+        echo '</div>'; 
     }
 
 echo "</div></div>";

@@ -24,7 +24,7 @@ include 'validar_Sesion.php';
   <body
     class="bg-black bg-gradient bg-black-custom d-flex flex-column min-vh-100 p-3"
   >
-    <!-- Header con barra de navegación -->
+  
     <div class="container">
       <h1
         class="tituloh1 bg-black bg-gradient bg-black-custom2 text-center p-3"
@@ -81,9 +81,7 @@ include 'validar_Sesion.php';
     </div>
 
 
-    <!-- Fin del contenedor del header -->
-
-    <!-- Contenido principal -->
+   
     <div class="container usersContainer mb-3 mt-3">
       <div class="row1 mb-3 mt-3">
         <div class="col col1 mb-3 mt-3">
@@ -117,27 +115,26 @@ include 'validar_Sesion.php';
       </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer text-white py-3 mt-auto">
-      <div class="container text-center">
+      <div class="container text-center ">
         <div class="row">
-          <!-- Sección de contacto -->
+       
           <div class="col-md-6 mb-3">
             <h5>Contacto</h5>
-            <p>Dirección: Calle Falsa 123, Ciudad</p>
-            <p>Teléfono: +123 456 789</p>
+            <p>Dirección: Calle Virgen del Puerto 15</p>
+            <p>Teléfono: +987 654 321</p>
           </div>
-          <!-- Sección de redes sociales -->
+        
           <div class="col-md-6">
             <h5>Síguenos</h5>
             <a href="#" class="text-white me-3">
-              <img src="instagram-icon.png" alt="Instagram" width="30" />
+              <img src="./instagram.png" alt="Instagram" width="30" />
             </a>
             <a href="#" class="text-white me-3">
-              <img src="twitter-icon.png" alt="Twitter" width="30" />
+              <img src="./logotipo-de-twitter.png" alt="Twitter" width="30" />
             </a>
             <a href="#" class="text-white">
-              <img src="facebook-icon.png" alt="Facebook" width="30" />
+              <img src="./facebook.png" alt="Facebook" width="30" />
             </a>
           </div>
         </div>

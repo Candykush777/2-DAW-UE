@@ -37,7 +37,10 @@
               </li>
               
               <li class="nav-item">
-                <a class="nav-link text-white fs-4" href="">Contacto</a>
+                <a class="nav-link text-white fs-4" href="#contacto">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white fs-4" href="listado_Inmuebles_NO_clientes.php">Listado Pisos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white fs-4" href="formulario_registro.php">Registro</a>
@@ -50,14 +53,14 @@
         </div>
       </nav>
     
-      <!-- Carrusel con imagen y burbuja gris con texto -->
+    
       <div class="container mt-4 flex-grow-1">
         <div id="carouselExample" class="carousel slide">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="position-relative">
                 <img src="/Inmobiliaria/piso_pozuelo.webp" class="d-block w-100" alt="Imagen 1" style="max-height: 550px;" />
-                <!-- Burbuja gris semi-transparente con texto -->
+               
                 <div class=" text-center position-absolute bottom-0 start-50 translate-middle-x mb-5 p-3 rounded-3  text-white fw-bold fs-2">
                 Piso minimalista en Pozuelo 1.455.000€.
                 </div>
@@ -66,7 +69,7 @@
             <div class="carousel-item">
               <div class="position-relative">
                 <img src= "/Inmobiliaria/piso_granVia.jpg"    class="d-block w-100" alt="Imagen 2" style="max-height: 550px;" />
-                <!-- Burbuja gris semi-transparente con texto -->
+               
                 <div class=" text-center position-absolute bottom-0 start-50 translate-middle-x mb-5 p-3 rounded-3  text-white fw-bold fs-2">
                                   Precioso Ático en el centro de Madrid 1.000.000€.
                 </div>
@@ -75,7 +78,7 @@
                          <div class="carousel-item">
               <div class="position-relative">
                 <img src="/Inmobiliaria/piso_Majadahonda.jpg" class="d-block w-100" alt="Imagen 3" style="max-height: 550px;"/>
-                <!-- Burbuja gris semi-transparente con texto -->
+               
                 <div class="text-center position-absolute bottom-0 start-0 mb-5 p-3 rounded-3 text-white fw-bold fs-2">
                   <p>Piso recien reformado, Majadahonda 875.000€</p>
                 </div>
@@ -96,27 +99,27 @@
     </div>
     
 
-    <!-- Footer -->
-    <footer class="footer text-white py-3 mt-auto">
+   
+    <footer class="footer text-white py-3 mt-auto" id="contacto">
       <div class="container text-center ">
         <div class="row">
-          <!-- Sección de contacto -->
+       
           <div class="col-md-6 mb-3">
             <h5>Contacto</h5>
-            <p>Dirección: Calle Falsa 123, Ciudad</p>
-            <p>Teléfono: +123 456 789</p>
+            <p>Dirección: Calle Virgen del Puerto 15</p>
+            <p>Teléfono: +987 654 321</p>
           </div>
-          <!-- Sección de redes sociales -->
+        
           <div class="col-md-6">
             <h5>Síguenos</h5>
             <a href="#" class="text-white me-3">
-              <img src="instagram-icon.png" alt="Instagram" width="30" />
+              <img src="./instagram.png" alt="Instagram" width="30" />
             </a>
             <a href="#" class="text-white me-3">
-              <img src="twitter-icon.png" alt="Twitter" width="30" />
+              <img src="./logotipo-de-twitter.png" alt="Twitter" width="30" />
             </a>
             <a href="#" class="text-white">
-              <img src="facebook-icon.png" alt="Facebook" width="30" />
+              <img src="./facebook.png" alt="Facebook" width="30" />
             </a>
           </div>
         </div>
