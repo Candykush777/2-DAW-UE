@@ -65,11 +65,21 @@
             Filtrar
           </button>
         </div>
-
-     
-
-        <div class="row mb-3 mt-3" id="principal">
-          <h3 class="text-center">Productos</h3>
+        <div class="secundario">
+          <div class="row" id="principal">
+            <div class="col-9 productos mb-3 mt-3">
+              <h3 class="text-center">Productos</h3>
+              <div class="row g-3" id="cards"></div>
+            </div>
+            <div class="col-3 carrito mb-3 mt-3">
+              <h3 class="text-center">Carrito</h3>
+              <div class="listaCarrito" id="listaC"></div>
+              <div class="precioTotalContainer text-center card p-2 mt-3" id="precioContainer">
+                <h5 class="text-center">Total: <span id="precioTotal">0,00€</span></h5>
+                <button type="button" class="btn btn-success" id="btn-comprar">Comprar</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

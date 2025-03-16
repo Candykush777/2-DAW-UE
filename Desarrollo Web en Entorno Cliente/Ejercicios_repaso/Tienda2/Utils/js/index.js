@@ -2,15 +2,17 @@ let productos = [];
 
 let filtroPrecio = document.querySelector("#filtroPrecio");
 let filtroCategoria = document.querySelector("#filtroCategoria");
-let divContainer = document.querySelector("#principal");
-let buscarID =document.querySelector("#id");
+let divContainer = document.querySelector("#cards");
+let buscarID = document.querySelector("#id");
 
-let btnFiltrar=document.querySelector("#boton");
+let carrito = [];
+let precioTotal = 0;
+
+let btnFiltrar = document.querySelector("#boton");
 /* filtroPrecio.addEventListener("change", filtrado);
 filtroCategoria.addEventListener("change", filtrado); */
 
-
- btnFiltrar.addEventListener("click",filtrado); 
+btnFiltrar.addEventListener("click", filtrado);
 
 let uRl = "https://dummyjson.com/products";
 
@@ -40,8 +42,6 @@ async function cargarProductos() {
     });
   }
 }
-
-
 
 function pintarCard(product) {
   let columna = document.createElement("div");
@@ -78,6 +78,10 @@ function pintarCard(product) {
   price.classList.add("card-text", "text-success");
   price.textContent = `Precio: ${product.price}`;
 
+  let btnComprar = document.createElement("button");
+  btnComprar.classList.add("btn", "btn-success");
+  btnComprar.textContent = "Comprar";
+
   columna.appendChild(card);
   card.appendChild(imagen);
   card.appendChild(cardBody);
@@ -86,62 +90,103 @@ function pintarCard(product) {
   cardBody.appendChild(marca);
   cardBody.appendChild(categoria);
   cardBody.appendChild(price);
+  cardBody.appendChild(btnComprar);
 
   divContainer.appendChild(columna);
+
+  btnComprar.addEventListener("click",(e)=>{
+    agregarCarrito(product);
+  });
 }
 
 function filtrado() {
-
-   let filtrarP = filtroPrecio.value; 
+  let filtrarP = filtroPrecio.value;
 
   let filtrarC = filtroCategoria.value;
 
-  let buscar=buscarID.value.trim();
+  let buscar = buscarID.value.trim();
 
   let productosFiltrados = productos;
 
-if (filtrarC!== "todas"){
+  if (filtrarC !== "todas") {
+    productosFiltrados = productosFiltrados.filter(
+      (product) => product.category === filtrarC
+    );
+  }
 
+  if (filtrarP === "1") {
+    productosFiltrados = productosFiltrados.filter(
+      (product) => product.price < 10
+    );
+  }
+  if (filtrarP === "2") {
+    productosFiltrados = productosFiltrados.filter(
+      (product) => product.price > 10 && product.price <= 40
+    );
+  }
 
-  productosFiltrados=productosFiltrados.filter((product)=>product.category=== filtrarC)
+  if (filtrarP === "3") {
+    productosFiltrados = productosFiltrados.filter(
+      (product) => product.price > 40
+    );
+  }
+
+  if (filtrarP === "4") {
+    productosFiltrados = productos;
+  }
+
+  if (buscar !== "") {
+    productosFiltrados = productosFiltrados.filter(
+      (product) => product.id === Number(buscar)
+    );
+  }
+
+  divContainer.innerHTML = "";
+  productosFiltrados.forEach((product) => pintarCard(product));
 }
 
+function agregarCarrito(product) {
+  carrito.push(product);
 
-if (filtrarP === "1"){
+  precioTotal += product.price;
 
-  productosFiltrados=productosFiltrados.filter((product)=>product.price < 10)
+  document.querySelector("#precioTotal").textContent = `${precioTotal.toFixed(
+    2
+  )}€`;
 
-}if (filtrarP === "2" ){
+  //hay que mostrar y hacer la funcion
 
-productosFiltrados=productosFiltrados.filter((product)=>product.price >10 && product.price <= 40)
-
+  mostrarProductos(product);
 }
 
-if(filtrarP === "3"){
+function mostrarProductos(product) {
+  let listaCarrito = document.querySelector("#listaC");
 
-  productosFiltrados=productosFiltrados.filter((product)=>product.price > 40)
+  let productoCarrito = document.createElement("div");
+  productoCarrito.classList.add(
+    "producto-carrito",
+    "card",
+    "p-2",
+    "mb-2",
+    "shadow-sm",
+    "animate__animated",
+    "animate__fadeInDown"
+  );
 
+  //pintamos la card desde aqui
 
+  productoCarrito.innerHTML = `
+
+<div class="d-flex alig-items-center">
+<img src="${product.thumbnail}" class="img-fluid rounded me-3">
+<div>
+<h6 clas="titulo">${product.title}</h6>
+<h6 class="precio">${product.price}€</h6>
+</div>
+</div>
+`;
+
+listaCarrito.appendChild(productoCarrito);
 }
-
-if (filtrarP === "4"){
-
-productosFiltrados =productos;
-
-}
-
-if(buscar !== ""){
-
-productosFiltrados=productosFiltrados.filter((product)=> product.id === Number(buscar) )
-  
-}
-
-
-
-divContainer.innerHTML="";
-productosFiltrados.forEach((product)=>pintarCard(product));
-}
-
 
 cargarProductos();
-
