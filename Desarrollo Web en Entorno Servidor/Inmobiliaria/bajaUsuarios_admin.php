@@ -3,12 +3,18 @@
 
 include 'conexion.php';
 
+// Sanitize and validate the input ID
+if (!isset($_REQUEST['id']) || !is_numeric($_REQUEST['id'])) {
+    die('Invalid ID provided');
+}
 
-$id=mysqli_real_escape_string($conexion,trim(strip_tags($_REQUEST['id'])));
+$id = (int)$_REQUEST['id'];
 
-$sql ="DELETE  FROM  usuario  WHERE usuario_id=$id";
-
-mysqli_query($conexion,$sql);
+// Prepare and execute the delete query using prepared statements
+$sql = "DELETE FROM usuario WHERE usuario_id = ?";
+$stmt = mysqli_prepare($conexion, $sql);
+mysqli_stmt_bind_param($stmt, "i", $id);
+mysqli_stmt_execute($stmt);
 
 if (mysqli_affected_rows($conexion) > 0) {
     
