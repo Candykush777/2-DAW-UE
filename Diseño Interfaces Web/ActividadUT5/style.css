@@ -1,0 +1,102 @@
+body {
+
+
+    background-color: black;
+}
+
+h1 {
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: aliceblue !important;
+    font-size: 50px;
+
+}
+
+.poster {
+    width: 70%;
+    min-width: 500px;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+        border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+   
+}
+
+.poster img {
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+   
+}
+
+.poster:hover img {
+    transform: scale(1.1);
+}
+
+.sinopsis {
+    width: 40%;
+    min-width: 300px;
+    max-width: 600px;
+    padding: 10px;
+    background: linear-gradient(90deg, yellow, rgb(241, 177, 80));
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 10px;
+    font-weight: bolder;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.pelicula {
+
+    width: 50%;
+    max-width: 600px;
+    min-width: 400px;
+    justify-content: center;
+
+}
+
+footer h1 {
+
+    background-color: gold;
+    color: black !important;
+
+}
+
+.container {
+    margin-bottom: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.poster,
+.pelicula {
+    flex: 1;
+    max-width: 50%;
+}
+
+.audio{
+
+display: flex;
+justify-content: center;
+margin-top: 10px;
+margin-bottom: 10px;
+
+
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .poster
+     {
+        max-width: 100%;
+    }
+}
