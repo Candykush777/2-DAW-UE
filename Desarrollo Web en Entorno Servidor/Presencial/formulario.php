@@ -32,7 +32,7 @@ $usuarioEncontrado=true;
     echo "<b>Bienvenido Usuario</b><br><br><br>";
     echo "<b>Menú de la Aplicación </b><br><br><br>";
     echo "<a href='hacerPedido.php'><b>Hacer Pedidos</b></a><br><br>";
-    echo "<a href='mostrarPedido.php'><b>Mostrar Pedidos</b></a><br><br>";
+    echo "<a href='mostrarModoTabla.php'><b>Mostrar Pedidos</b></a><br><br>";
     echo "<a href='calcularPrecio.php'><b>Calcular Precio del Pedido</b></a><br><br>";
     echo "<a href='calcularPrecio.php'><b>Sorteo de Pedido</b></a><br>";
    

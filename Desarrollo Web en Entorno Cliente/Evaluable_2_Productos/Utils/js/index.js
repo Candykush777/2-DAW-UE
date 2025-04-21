@@ -27,14 +27,15 @@ async function cargarProductos() {
     allProductos = json.products;
 
     console.log("Respuesta correcta de la API", allProductos);
-
-    allProductos.forEach((producto) => pintarCard(producto));
-
     Swal.fire({
       title: "Cargando datos....",
       text: "Respuesta correcta de la API",
       icon: "success",
     });
+
+    allProductos.forEach((producto) => pintarCard(producto));
+
+ 
   } catch (error) {
     console.error("Error al cargar los datos", error);
     Swal.fire({

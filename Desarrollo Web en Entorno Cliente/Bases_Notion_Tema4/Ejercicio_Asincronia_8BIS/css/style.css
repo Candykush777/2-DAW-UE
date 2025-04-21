@@ -1,0 +1,17 @@
+h1{
+    color: white;
+}
+
+
+.tapete{
+
+
+display:flex;
+flex-wrap: wrap;
+justify-content: space-between;
+gap: 1px;
+
+
+
+
+}
