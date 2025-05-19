@@ -120,7 +120,6 @@
 
     function calculateResult() {
       const input = document.getElementById("result").value;
-      if (input.trim() === "") return;
       const output = eval(input);
       document.getElementById("result").value = output;
 
