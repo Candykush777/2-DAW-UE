@@ -38,6 +38,16 @@
         </video>
         
     </div>
+<div class="container text-center mt-5">
+  <h2>Animación con Canvas</h2>
+  <canvas id="canvasAnimado" width="500" height="200" style="border:1px solid #000;"></canvas>
+</div>
+ <h2 style="text-align: center; font-family: Arial, sans-serif;">Círculo animado en canvas</h2>
+
+  <canvas id="canvasCirculo" width="400" height="200"
+    style="border: 1px solid #000; display: block; margin: 30px auto;">
+  </canvas>
+
 
     <footer>
         <div class="audio">   <audio src="./Snactch.mp3" controls></audio></div>
@@ -46,5 +56,55 @@
 
         <h1 class="text-center">SNATCH</h1>
     </footer>
+<!-- Rectángulo animado -->
+<script>
+  const canvasRect = document.getElementById("canvasAnimado");
+  const ctxRect = canvasRect.getContext("2d");
+  let xRect = 0;
+  function animarRectangulo() {
+    ctxRect.clearRect(0,0,canvasRect.width,canvasRect.height);
+    ctxRect.fillStyle = "skyblue";
+    ctxRect.fillRect(xRect,80,100,50);
+    ctxRect.fillStyle = "black";
+    ctxRect.font = "16px Arial";
+    ctxRect.fillText("Moviendo...", xRect+10,110);
+    xRect += 2;
+    if (xRect > canvasRect.width) xRect = -100;
+    requestAnimationFrame(animarRectangulo);
+  }
+  animarRectangulo();
+</script>
+
+<!-- Círculo animado -->
+<script>
+  const canvasCirculo = document.getElementById("canvasCirculo");
+  const ctxCirculo  = canvasCirculo.getContext("2d");
+  class Circulo {
+    constructor(x,y,r,v,c){ this.x=x; this.y=y; this.r=r; this.v=v; this.c=c; }
+    dibujar(){
+      ctxCirculo.clearRect(0,0,canvasCirculo.width,canvasCirculo.height);
+      ctxCirculo.beginPath();
+      ctxCirculo.arc(this.x,this.y,this.r,0,2*Math.PI);
+      ctxCirculo.fillStyle = this.c; ctxCirculo.fill(); ctxCirculo.stroke();
+      ctxCirculo.fillStyle = "black";
+      ctxCirculo.font      = "16px Arial";
+      ctxCirculo.textAlign = "center";
+      ctxCirculo.fillText("¡Canvas!", this.x, this.y+5);
+    }
+    mover(){
+      this.x += this.v;
+      if (this.x + this.r > canvasCirculo.width || this.x - this.r < 0) this.v *= -1;
+    }
+  }
+  const miCirculo = new Circulo(100,100,50,2,"lightgreen");
+  function animarCirculo() {
+    ctxCirculo.clearRect(0,0,canvasCirculo.width,canvasCirculo.height);
+    miCirculo.mover();
+    miCirculo.dibujar();
+    requestAnimationFrame(animarCirculo);
+  }
+  animarCirculo();
+</script>
+
   </body>
 </html>

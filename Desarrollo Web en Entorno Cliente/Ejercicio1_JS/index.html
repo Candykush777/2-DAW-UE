@@ -17,5 +17,29 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
-  
+  <body>
+    <div class="container">
+      <h1 class="text-center">Red Social X</h1>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="input" class="form-label">Introduce tu tweet</label>
+
+          <input
+            class="form-control"
+            id="input"
+            placeholder="Introduce tu tweet"
+            maxlength="255"
+          /><br>
+
+          <span id="contador">0/255</span><br><br>
+          <button class="btn btn-success" id="button">Publicar</button>
+        </div>
+
+        <div class="col-md-6 card" id="card"></div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
 </html>

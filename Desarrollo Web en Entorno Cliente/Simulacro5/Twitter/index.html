@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Twitter</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,5 +17,30 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
-  
+  <body>
+    <div class="container p-5">
+      <h1 class="text-center">Twitter</h1>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="input" class="form-label">Introduce tu tweet</label>
+          <input
+            type="text"
+            id="input"
+            class="form-control"
+            placeholder="Introduce tu mensaje"
+            maxlength="255"
+          /><br>
+
+          <span id="contador">0/255</span><br><br>
+
+          <button id="button" class="btn btn-success">Publicar</button>
+        </div>
+
+        <div class="col-md-6 card p-3" id="card"></div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
 </html>

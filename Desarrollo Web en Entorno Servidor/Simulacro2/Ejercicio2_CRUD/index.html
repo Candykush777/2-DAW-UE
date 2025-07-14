@@ -20,6 +20,8 @@
     <div class="container p-5">
       <h1 class="text-center">Manejo Ordenadores</h1>
 
+      <!-- Insertar -->
+
       <div class="container d-flex align-items-center p-5">
         <form action="insert.php" method="POST" class="form-control p-3">
           <label for="nombre" class="form-label">Nombre:</label>
@@ -36,6 +38,7 @@
           <a href="listar.php" class="btn btn-primary">Listar Usuarios</a>
         </form>
       </div>
+      <!-- Eliminar -->
       <div class="container">
         <form action="delete.php" method="POST" class="form-control p-5">
           <label for="id" class="form-label"
@@ -46,6 +49,56 @@
           <button type="submit" class="btn btn-danger w-100">
             Borrar por ID
           </button>
+          </form>
+
+           <!-- Editar -->
+    <div class="container mt-5">
+      <form action="editar.php" method="POST" class="form-control p-5">
+        <!-- Campo oculto para autoincremental (no editable) -->
+        <label for="id_edit" class="form-label">
+          ID del usuario a editar:
+        </label>
+        <input
+          type="number"
+          id="id_edit"
+          name="id"
+          class="form-control mb-3"
+          
+        />
+
+        <label for="nombre_edit" class="form-label">Nombre:</label>
+        <input
+          type="text"
+          id="nombre_edit"
+          name="nombre"
+          class="form-control mb-3"
+          placeholder="Nuevo nombre"
+          
+        />
+
+        <label for="email_edit" class="form-label">Email:</label>
+        <input
+          type="email"
+          id="email_edit"
+          name="email"
+          class="form-control mb-3"
+          placeholder="nuevo@correo.com"
+          
+        />
+
+        <label for="edad_edit" class="form-label">Edad:</label>
+        <input
+          type="text"
+          id="edad_edit"
+          name="edad"
+          class="form-control mb-4"
+          placeholder="Nueva edad"
+          
+        />
+
+        <button type="submit" name="update" class="btn btn-warning w-100">
+          Guardar Cambios
+        </button>
         </form>
       </div>
     </div>

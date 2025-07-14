@@ -1,10 +1,13 @@
 let input = document.querySelector("#input");
+
 let contador = document.querySelector("#contador");
+
 let button = document.querySelector("#button");
+
 let divCard = document.querySelector("#card");
 
-input.addEventListener("input",actualizarContador);
-button.addEventListener("click",publicar);
+input.addEventListener("input", actualizarContador);
+button.addEventListener("click", publicar);
 
 function publicar() {
   let mensaje = input.value.trim();
@@ -13,25 +16,26 @@ function publicar() {
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "Tienes que rellenar el mensaje ",
+      text: "Tienes que introducir un mensaje",
     });
     return;
   }
 
   let card = document.createElement("div");
-  card.classList.add("card", "p-3", "mb-3");
+  card.classList.add("card", "p-1");
 
-  let bodyCard = document.createElement("div");
-  bodyCard.classList.add("card-body", "p-1");
-  bodyCard.textContent = mensaje;
+  let cardBody = document.createElement("div");
+  cardBody.classList.add("card-body", "p-1");
+  cardBody.textContent = mensaje;
 
   let button = document.createElement("button");
-  button.classList.add("btn","btn-danger","w-50");
+  button.classList.add("button", "btn", "btn-danger", "text-center", "w-50");
   button.textContent = "Eliminar";
 
   button.addEventListener("click", () => card.remove());
 
-  card.appendChild(bodyCard);
+  card.appendChild(cardBody);
+
   card.appendChild(button);
 
   divCard.appendChild(card);
@@ -44,20 +48,3 @@ function publicar() {
 function actualizarContador() {
   contador.textContent = `${input.value.length}/255`;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

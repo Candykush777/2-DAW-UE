@@ -25,4 +25,7 @@ echo "Alumno guardado con exito";
     echo "Error al ñadir el alumno";
 }
 
+
+/* dddddd
+ddddd */
 ?>

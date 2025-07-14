@@ -1,0 +1,81 @@
+ 
+body{
+
+    background-color: rgb(221, 200, 241);
+}
+
+.container{
+    background-color: rgb(207, 189, 224);
+    width: 100%;
+
+}
+
+.nav{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+.a{
+ color: rgb(108, 20, 108);
+    font-weight: bold;
+
+}
+
+
+
+.div1{
+
+    border: solid rgb(74, 8, 74);
+    padding: 5px;
+
+}
+.div2{
+border: solid rgb(74, 8, 74);
+padding: 5px;
+
+}
+
+.div3{
+border: solid rgb(74, 8, 74);
+padding: 5px;
+
+}
+
+p1{
+
+    color: rgb(48, 11, 83);
+    font-size: 30px !important;
+}
+
+.encima{
+
+    background-color: white;
+    padding: 30px;
+}
+
+.nav2{
+padding: 5px;
+    background-color: white;
+    border-bottom: solid rgb(74, 8, 74);
+   margin-bottom: 20px;
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: row;
+}
+
+
+.principal{
+
+background-color: white !important;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+gap:10px;
+
+}
